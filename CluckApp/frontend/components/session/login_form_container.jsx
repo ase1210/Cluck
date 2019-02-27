@@ -9,6 +9,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
   action: (user) => dispatch(login(user)),
+  demoAction: (user) => dispatch(login(user)),
   clearErrors: () => dispatch(clearErrors())
 });
 

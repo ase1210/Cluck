@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
 
   handleDemoSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state.demo);
+    this.props.demoAction(this.state.demo);
   }
 
   // handleRemember(e) {
