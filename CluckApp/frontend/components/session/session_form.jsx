@@ -53,9 +53,11 @@ class SessionForm extends React.Component {
         {errors.length === 0 ? <></> : <ul>{errors}</ul>}
         <form onClick={this.props.clearErrors}>
           <input type='text' value={this.state.username}
+            placeholder='username'
             onChange={this.handleInput('username')} />
           <br />
           <input type='password' value={this.state.password}
+            placeholder='password'
             onChange={this.handleInput('password')} />
           <br />
           <button onClick={this.handleSubmit}>{this.props.formType}</button>
