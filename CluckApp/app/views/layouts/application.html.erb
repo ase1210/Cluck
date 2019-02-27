@@ -4,11 +4,14 @@
     <title>CluckApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <% if current_user %>
+      <script>
+        window.currentUser = <%= render('/api/users/show.json.jbuilder', user: current_user).html_safe %>
+      </script>
+    <% end %>
   </head>
-
   <body>
     <%= yield %>
   </body>
