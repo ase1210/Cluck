@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import { login } from '../../actions/session_actions';
+import { login, clearErrors } from '../../actions/session_actions';
 
 const mSTP = (state) => ({
   sessionErrors: state.errors.sessionErrors,
@@ -8,7 +8,8 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-  action: (user) => dispatch(login(user))
+  action: (user) => dispatch(login(user)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 const LoginFormContainer = connect(mSTP, mDTP)(SessionForm);

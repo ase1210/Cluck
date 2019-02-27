@@ -10,8 +10,12 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
-    this.handleInput = this.handleInput.bind(this);
+    // this.handleInput = this.handleInput.bind(this);
     // this.handleRemember = this.handleRemember.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   handleInput(field) {
@@ -46,7 +50,7 @@ class SessionForm extends React.Component {
         <h2>{this.props.formType} to Cluck</h2>
         <p>Enter your username and password</p>
         {errors.length === 0 ? <></> : <ul>{errors}</ul>}
-        <form>
+        <form onClick={this.props.clearErrors}>
           <input type='text' value={this.state.username}
             onChange={this.handleInput('username')} />
           <br />
