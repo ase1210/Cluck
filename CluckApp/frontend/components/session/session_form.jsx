@@ -5,20 +5,20 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       form: { username: "", password: "" },
-      remember: "unchecked"
+      // remember: "unchecked",
+      demo: { username: 'Drew', password: 'tester' }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
-    this.handleRemember = this.handleRemember.bind(this);
+    // this.handleRemember = this.handleRemember.bind(this);
   }
 
   handleInput(field) {
     return (e) => {
-      this.setState({
-        form: {
-          [field]: e.target.value
-        }
-      });
+      const form = this.state.form;
+      form[field] = e.target.value;
+      this.setState({ form });
     };
   }
 
@@ -27,30 +27,36 @@ class SessionForm extends React.Component {
     this.props.action(this.state.form);
   }
 
-  handleRemember(e) {
-    const newVal = this.state.remember === "checked" ? "unchecked" : "checked";
-    this.setState({ remember: newVal });
+  handleDemoSubmit(e) {
+    e.preventDefault();
+    this.props.action(this.state.demo);
   }
+
+  // handleRemember(e) {
+  //   const newVal = this.state.remember === "checked" ? "unchecked" : "checked";
+  //   this.setState({ remember: newVal });
+  // }
 
   render() {
     return (
       <div>
         <h2>{this.props.formType} to Cluck</h2>
         <p>Enter your username and password</p>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <input type='text' value={this.state.username}
             onChange={this.handleInput('username')} />
           <br />
           <input type='password' value={this.state.password}
             onChange={this.handleInput('password')} />
           <br />
-          <button>{this.props.formType}</button>
+          <button onClick={this.handleSubmit}>{this.props.formType}</button>
           <br />
-          <button>Demo Login</button>
-          <br />
-          <label>
-            <input type="checkbox" onClick={this.handleRemember} />Remember me
-          </label>
+          <button onClick={this.handleDemoSubmit}>Demo Login</button>
+          {/* <br /> */}
+          {/* <label>
+            <input type="checkbox" value={this.state.remember}
+              onClick={this.handleRemember} />Remember me
+          </label> */}
         </form>
       </div>
     )
