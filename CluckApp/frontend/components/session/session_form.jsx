@@ -45,9 +45,10 @@ class SessionForm extends React.Component {
     const errors = this.props.sessionErrors.map(
       (error, idx) => <li key={idx}>{error}</li>
     )
+    const preposition = this.props.formType === "Signup" ? "for" : "to";
     return (
       <div>
-        <h2>{this.props.formType} to Cluck</h2>
+        <h2>{this.props.formType} {preposition} Cluck</h2>
         <p>Enter your username and password</p>
         {errors.length === 0 ? <></> : <ul>{errors}</ul>}
         <form onClick={this.props.clearErrors}>
