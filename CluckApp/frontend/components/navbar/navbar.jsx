@@ -18,7 +18,7 @@ const SignedOut = (props) => (
       <span>Pricing</span>
     </section>
     <section className='nav-right-align'>
-      <Link to='/login'>Sign In</Link>
+      <Link to='/login'>Sign in</Link>
       <Link to='/signup'>Get Started</Link>
     </section>
   </>

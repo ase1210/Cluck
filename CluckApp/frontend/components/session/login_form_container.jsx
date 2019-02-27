@@ -3,7 +3,7 @@ import SessionForm from './session_form';
 import { login } from '../../actions/session_actions';
 
 const mSTP = (state) => ({
-  formType: "Log In"
+  formType: "Login"
 });
 
 const mDTP = (dispatch) => ({

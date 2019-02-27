@@ -3,7 +3,7 @@ import SessionForm from './session_form';
 import { signup } from '../../actions/session_actions';
 
 const mSTP = (state) => ({
-  formType: "Create Account"
+  formType: "Signup"
 });
 
 const mDTP = (dispatch) => ({
