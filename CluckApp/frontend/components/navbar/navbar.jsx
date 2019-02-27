@@ -11,7 +11,7 @@ const SignedIn = ({ logout, currentUser }) => (
 const SignedOut = (props) => (
   <>
     <section className='nav-left-align'>
-      <span><img src='https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=150' alt="cluck-logo" /></span>
+      <span><img src='https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=50' alt="cluck-logo" /></span>
       <span>Why Cluck?</span>
       <span>Solutions</span>
       <span>Resources</span>
@@ -25,12 +25,12 @@ const SignedOut = (props) => (
 )
 
 const NavBar = (props) => (
-  <div>
+  <nav>
     {props.currentUser ?
       <SignedIn currentUser={props.currentUser} logout={props.logout} /> :
       <SignedOut />
     }
-  </div>
+  </nav>
 )
 
 export default NavBar;
