@@ -1,8 +1,8 @@
 import {
   RECEIVE_USER_ERRORS
-} from "../actions/session_actions";
+} from "../../actions/session_actions";
 
-const sessionReducer = (state = [], action) => {
+const userErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER_ERRORS:
@@ -12,4 +12,4 @@ const sessionReducer = (state = [], action) => {
   }
 };
 
-export default sessionReducer;
+export default userErrorsReducer;
