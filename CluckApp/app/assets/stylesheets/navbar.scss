@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid lightgrey;
+  font-size: 14px;
   padding: 0 5%;
 }
 
@@ -38,6 +39,9 @@
 
 .nav-right-align>button {
   text-align: center;
-  padding: 5px;
+  background-color: #611f69;
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
   margin: 5px;
 }
