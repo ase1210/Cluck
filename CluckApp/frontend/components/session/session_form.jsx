@@ -38,10 +38,14 @@ class SessionForm extends React.Component {
   // }
 
   render() {
+    const errors = this.props.sessionErrors.map(
+      (error, idx) => <li key={idx}>{error}</li>
+    )
     return (
       <div>
         <h2>{this.props.formType} to Cluck</h2>
         <p>Enter your username and password</p>
+        {errors.length === 0 ? <></> : <ul>{errors}</ul>}
         <form>
           <input type='text' value={this.state.username}
             onChange={this.handleInput('username')} />
