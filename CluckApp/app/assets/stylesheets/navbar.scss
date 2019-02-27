@@ -1,0 +1,40 @@
+// Top level NavBar component
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  padding: 0 5%;
+}
+
+// 2nd level 
+.nav-left-align {
+  display: flex;
+  align-items: center;
+
+}
+
+.nav-right-align {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// 3rd level 
+.nav-left-align>div {
+  // border: 1px solid black;
+  max-height: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.logo {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.nav-right-align>div {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}

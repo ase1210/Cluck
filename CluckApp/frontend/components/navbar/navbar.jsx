@@ -11,21 +11,23 @@ const SignedIn = ({ logout, currentUser }) => (
 const SignedOut = (props) => (
   <>
     <section className='nav-left-align'>
-      <span><img src='https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=50' alt="cluck-logo" /></span>
-      <span>Why Cluck?</span>
-      <span>Solutions</span>
-      <span>Resources</span>
-      <span>Pricing</span>
+      <div>
+        <Link to='/' ><img className='logo' src='/images/cluck-logo.png' alt="cluck-logo" /></Link>
+      </div>
+      <div>Why Cluck?</div>
+      <div>Solutions</div>
+      <div>Resources</div>
+      <div>Pricing</div>
     </section>
     <section className='nav-right-align'>
-      <Link to='/login'>Sign in</Link>
-      <Link to='/signup'>Get Started</Link>
+      <div><Link to='/login'>Sign in</Link></div>
+      <div><Link to='/signup'>Get Started</Link></div>
     </section>
   </>
 )
 
 const NavBar = (props) => (
-  <nav>
+  <nav className='navbar'>
     {props.currentUser ?
       <SignedIn currentUser={props.currentUser} logout={props.logout} /> :
       <SignedOut />
