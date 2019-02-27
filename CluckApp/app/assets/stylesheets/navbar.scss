@@ -21,8 +21,6 @@
 
 // 3rd level 
 .nav-left-align>div {
-  // border: 1px solid black;
-  max-height: 50px;
   padding: 5px;
   margin: 5px;
 }
@@ -33,7 +31,12 @@
 }
 
 .nav-right-align>div {
-  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.nav-right-align>button {
   text-align: center;
   padding: 5px;
   margin: 5px;
