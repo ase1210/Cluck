@@ -4,14 +4,16 @@ import NavBarContainer from './navbar/navbar_container';
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import Home from './splash/home';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
-      <Route exact path='/signup' component={SignupFormContainer} />
-      <Route exact path='/login' component={LoginFormContainer} />
-      <Route path='/' component={Home} />
+      <AuthRoute exact path='/signup' component={SignupFormContainer} />
+      <AuthRoute exact path='/login' component={LoginFormContainer} />
+      <AuthRoute exact path='/' component={Home} />
+      <Route exact path='/messages' render={() => <h1>Hello</h1>} />
     </Switch>
   </div>
 )
