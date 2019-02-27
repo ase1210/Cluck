@@ -716,3 +716,11 @@ Processing by Api::SessionsController#create as JSON
 Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
 
 
+Started POST "/api/session" for 127.0.0.1 at 2019-02-27 09:51:11 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+Completed 422 Unprocessable Entity in 11ms (Views: 0.2ms | ActiveRecord: 7.6ms)
+
+
