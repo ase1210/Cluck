@@ -1,7 +1,7 @@
 import {
   RECEIVE_USER,
   LOGOUT_USER
-} from "../actions/session_actions";
+} from "../../actions/session_actions";
 
 const defaultState = {
   currentUser: null
