@@ -19,6 +19,15 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :user_chatrooms
+
+  has_many :admin_chatrooms,
+    primary_key: :id,
+    foreign_key: :admin_id,
+    class_name: :Chatroom
+
+  has_many :chatrooms, through: :user_chatrooms, source: :chatroom
+
   def self.find_by_credentials(un, pw)
     user = User.find_by(username: un)
     (user && user.is_password?(pw)) ? user : nil

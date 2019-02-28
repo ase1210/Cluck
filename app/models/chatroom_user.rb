@@ -10,4 +10,8 @@
 #
 
 class ChatroomUser < ApplicationRecord
+  validates_uniqueness_of :chatroom_id, scope: { :user_id }
+
+  belongs_to :chatroom
+  belongs_to :user
 end
