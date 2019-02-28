@@ -7,7 +7,7 @@
 #  user_id     :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  active      :boolean          default(TRUE)
+#  active      :boolean          default(TRUE), not null
 #
 
 require 'test_helper'
