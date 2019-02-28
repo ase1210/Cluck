@@ -20,5 +20,9 @@ class Chatroom < ApplicationRecord
     class_name: :User
 
   has_many :chatroom_users
-  has_many :users, through: :chatroom_users, source: :user
+  has_many :users, through: :chatroom_users, source: :user do
+    def active
+      where("chatroom_users.active = ?", true)
+    end
+  end
 end

@@ -18,4 +18,12 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  def require_login
+    render json: ["You must be logged in to perform this action"], status: 422 unless current_user
+  end
+
+  def require_logout
+    render json: ["You cannot do this while logged in"], status: 422 if current_user
+  end
 end

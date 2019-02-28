@@ -26,7 +26,11 @@ class User < ApplicationRecord
     foreign_key: :admin_id,
     class_name: :Chatroom
 
-  has_many :chatrooms, through: :user_chatrooms, source: :chatroom
+  has_many :chatrooms, through: :user_chatrooms, source: :chatroom do
+    def active
+      where("chatroom_users.active = ?", true)
+    end
+  end
 
   def self.find_by_credentials(un, pw)
     user = User.find_by(username: un)
