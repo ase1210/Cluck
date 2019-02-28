@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = (props) => (
+const Splash = (props) => (
   <main>
     <section>
       <h1>TITLE SECTION</h1>
@@ -22,4 +22,4 @@ const Home = (props) => (
   </main>
 )
 
-export default Home;
+export default Splash;
