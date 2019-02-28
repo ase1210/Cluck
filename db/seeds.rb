@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Users Seeds
+
+User.delete_all
+
+users = [
+  {username: "Drew", password: "tester"},
+  {username: "Mike", password: "tester"},
+  {username: "Sr. Clucks'alot", password: "tester"},
+]
+
+users.each { |user| User.create(user) }
