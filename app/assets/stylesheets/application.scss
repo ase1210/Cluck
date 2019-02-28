@@ -14,9 +14,10 @@
  *= require_self
  */
 
-/* CSS RESET */
-@import './reset.scss';
+@import './reset';
 
-@import './navbar.scss';
+@import './navbar';
 
-@import './session_form.scss';
+@import './session_form';
+
+@import './splash';
