@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :user_chatrooms
+  has_many :user_chatrooms, class_name: :ChatroomUser
 
   has_many :admin_chatrooms,
     primary_key: :id,
