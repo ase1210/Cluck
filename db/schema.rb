@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_225942) do
+ActiveRecord::Schema.define(version: 2019_02_28_190246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chatroom_users", force: :cascade do |t|
+    t.integer "chatroom_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "chatroom_id"], name: "index_chatroom_users_on_user_id_and_chatroom_id", unique: true
+    t.index ["user_id"], name: "index_chatroom_users_on_user_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "channel", null: false
+    t.integer "admin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_chatrooms_on_admin_id"
+    t.index ["channel"], name: "index_chatrooms_on_channel"
+    t.index ["name"], name: "index_chatrooms_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
