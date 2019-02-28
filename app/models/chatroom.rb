@@ -14,8 +14,6 @@ class Chatroom < ApplicationRecord
   validates :name, presence: true
   validates :channel, inclusion: {in: [true, false]}
 
-  # create method --  @chatroom.chatroom_users.create(user_id: current_user.id)
-
   belongs_to :admin,
     primary_key: :id,
     foreign_key: :admin_id,
