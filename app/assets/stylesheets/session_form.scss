@@ -1,29 +1,51 @@
 .session-form-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   margin-top: 70px;
   margin-left: 20%;
   margin-right: 20%;
-  padding: 30px 100px 15px;
+  padding: 30px 100px;
   border: 2px solid lightgrey;
+  min-height: 400px;
+  min-width: 400px;
+}
+
+.session-form-container>h2 {
+  margin: 5px;
+  font-size: 40px;
+  padding-bottom: 20px;
+  font-weight: bold;
 }
 
 .session-form-container>p {
   margin: 5px;
-}
-
-.session-form {
-  border: 1px solid black;
-
-}
-
-h2 {
-  font-size: 40px;
-  font-weight: bold;
-}
-
-p {
+  padding-bottom: 20px;
   font-size: 16px;
+
+}
+
+.session-form-container>form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.session-form-container>form>input {
+  border: 1px solid grey;
+  padding: 5px 15px;
+}
+
+.session-form-container>form>button {
+  text-align: center;
+  background-color: #611f69;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 3px;
+  align-self: stretch;
+}
+
+.session-form-container>form>button:hover {
+  background-color: #4a1750;
 }

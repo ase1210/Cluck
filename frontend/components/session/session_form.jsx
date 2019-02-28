@@ -51,8 +51,9 @@ class SessionForm extends React.Component {
         <h2>{this.props.formType} {preposition} Cluck</h2>
         <p>Enter your username and password</p>
         {errors.length === 0 ? <></> : <ul>{errors}</ul>}
-        <form className='session-form' onClick={this.props.clearErrors}>
+        <form onClick={this.props.clearErrors}>
           <input type='text' value={this.state.username}
+            autoFocus="autofocus"
             placeholder='username'
             onChange={this.handleInput('username')} />
           <br />
