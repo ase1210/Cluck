@@ -1,0 +1,29 @@
+.session-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 70px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 30px 100px 15px;
+  border: 2px solid lightgrey;
+}
+
+.session-form-container>p {
+  margin: 5px;
+}
+
+.session-form {
+  border: 1px solid black;
+
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+}

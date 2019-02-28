@@ -47,11 +47,11 @@ class SessionForm extends React.Component {
     )
     const preposition = this.props.formType === "Signup" ? "for" : "to";
     return (
-      <div>
+      <div className="session-form-container">
         <h2>{this.props.formType} {preposition} Cluck</h2>
         <p>Enter your username and password</p>
         {errors.length === 0 ? <></> : <ul>{errors}</ul>}
-        <form onClick={this.props.clearErrors}>
+        <form className='session-form' onClick={this.props.clearErrors}>
           <input type='text' value={this.state.username}
             placeholder='username'
             onChange={this.handleInput('username')} />
