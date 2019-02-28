@@ -9,8 +9,8 @@
 
     .main-splash {
       display: grid;
-      grid-template-columns: 100px 151px 351px 27px 289px 160px;
-      grid-template-rows: 100px 100px 100px 100px 100px 100px;
+      grid-template-columns: 1011fr 1361fr 3384fr 22px 2987fr 1257fr;
+      grid-template-rows: 100px 69px minmax(auto, 125px) auto 286px 30px;
       margin: 40px 75px;
 
       h1 {
