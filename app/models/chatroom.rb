@@ -11,7 +11,7 @@
 #
 
 class Chatroom < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :channel, inclusion: {in: [true, false]}
 
   belongs_to :admin,
