@@ -19,11 +19,11 @@ export const fetchChatrooms = () => dispatch => (
   )
 );
 
-export const fetchChatroom = (id) => dispatch => (
-  ChatroomAPIUtil.getChatroom(id).then(
-    chatroom => dispatch(receiveChatroom(chatroom))
-  )
-);
+// export const fetchChatroom = (id) => dispatch => (
+//   ChatroomAPIUtil.getChatroom(id).then(
+//     chatroom => dispatch(receiveChatroom(chatroom))
+//   )
+// );
 
 export const createChatroom = (chatroom) => dispatch => (
   ChatroomAPIUtil.postChatroom(chatroom).then(
