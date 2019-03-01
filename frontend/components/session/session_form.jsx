@@ -1,5 +1,14 @@
 import React from 'react';
 
+const SessionErrors = (props) => (
+  <div className="session-errors-container">
+    {props.sessionErrors.map((error, idx) => (
+      <p className="session-errors-item" key={idx}>{error}</p>
+    )
+    )}
+  </div>
+)
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -34,22 +43,13 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const errors =
-      <div className="session-errors-container">
-        {this.props.sessionErrors.map(
-          (error, idx) => (
-            <p className="session-errors-item" key={idx}>{error}</p>
-          )
-        )}
-      </div>
-
-    const preposition = this.props.formType === "Sign up" ? "for" : "to";
     return (
       <div className='session-form-parent'>
-        {this.props.sessionErrors.length === 0 ? <></> : errors}
+        {this.props.sessionErrors.length === 0 ? <></> : <SessionErrors sessionErrors={this.props.sessionErrors} />}
         <div className="session-form-container">
-          <h2>{this.props.formType} {preposition} Cluck</h2>
-          <form onClick={this.props.clearErrors}>
+          <h2>{this.props.formType} {this.props.formType === "Sign up" ? "for" : "to"} Cluck</h2>
+          {/* <form onClick={this.props.clearErrors}> */}
+          <form>
             <p>Enter your <span style={{ fontWeight: 'bold' }}>username</span> and <span style={{ fontWeight: 'bold' }}>password</span>.</p>
             <input type='text' value={this.state.username}
               autoFocus="autofocus"
