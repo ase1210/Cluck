@@ -1,12 +1,15 @@
 // Top level NavBar component
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 1px solid lightgrey;
   font-size: 16px;
-  line-height: 20px;
-  padding: 0 5%;
-
+  line-height: 26px;
+  padding: 0;
+  max-width: auto;
+  height: 70px;
+  box-sizing: border-box;
+  align-self: center;
 }
 
 // 2nd level 
@@ -45,6 +48,7 @@
   background-color: #611f69;
   border: 2px solid #611f69;
   padding: 10px;
+  margin-left: 10px;
   line-height: 16px;
   color: #fff;
   border-radius: 4px;
