@@ -5,7 +5,7 @@ import {
   CLEAR_ERRORS
 } from "../../actions/session_actions";
 
-const chatroomErrorsReducer = (state = [], action) => {
+const chatroomErrorsReducer = (state, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CHATROOM_ERRORS:
