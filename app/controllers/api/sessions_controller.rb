@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render "/api/users/show"
     else
-      render json: ["Invalid Credentials"], status: 422
+      render json: ["Sorry, you entered an incorrect username or password"], status: 422
     end
   end
 
