@@ -2,6 +2,7 @@ import * as ChatroomAPIUtil from '../util/chatroom_api_util';
 
 export const RECEIVE_CHATROOMS = "RECEIVE_CHATROOMS";
 export const RECEIVE_CHATROOM = "RECEIVE_CHATROOM";
+export const RECEIVE_CHATROOM_ERRORS = "RECEIVE_CHATROOM_ERRORS";
 
 const receiveChatrooms = (chatrooms) => ({
   type: RECEIVE_CHATROOMS,
@@ -11,6 +12,11 @@ const receiveChatrooms = (chatrooms) => ({
 const receiveChatroom = (chatroom) => ({
   type: RECEIVE_CHATROOM,
   chatroom
+});
+
+const receiveChatroomErrors = (errors) => ({
+  type: RECEIVE_CHATROOM_ERRORS,
+  errors
 });
 
 export const fetchChatrooms = () => dispatch => (
@@ -27,6 +33,7 @@ export const fetchChatrooms = () => dispatch => (
 
 export const createChatroom = (chatroom) => dispatch => (
   ChatroomAPIUtil.postChatroom(chatroom).then(
-    chatroom => dispatch(receiveChatroom(chatroom))
+    chatroom => dispatch(receiveChatroom(chatroom)),
+    errors => dispatch(receiveChatroomErrors(errors))
   )
 );
