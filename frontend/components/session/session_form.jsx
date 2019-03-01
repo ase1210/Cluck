@@ -48,7 +48,6 @@ class SessionForm extends React.Component {
         {this.props.sessionErrors.length === 0 ? <></> : <SessionErrors sessionErrors={this.props.sessionErrors} />}
         <div className="session-form-container">
           <h2>{this.props.formType} {this.props.formType === "Sign up" ? "for" : "to"} Cluck</h2>
-          {/* <form onClick={this.props.clearErrors}> */}
           <form>
             <p>Enter your <span style={{ fontWeight: 'bold' }}>username</span> and <span style={{ fontWeight: 'bold' }}>password</span>.</p>
             <input type='text' value={this.state.username}
