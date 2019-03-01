@@ -13,7 +13,7 @@ class Api::ChatroomsController < ApplicationController
     if @chatroom.save
       render :show
     else
-      render json: @chatroom.errors.full_messages, status: 422
+      render json: ["A chatroom with that name already exists"], status: 422
     end
   rescue ActiveRecord::RecordNotFound
     render json: ["At least one of those users no longer exists"], status: 422
