@@ -1,6 +1,6 @@
 class Api::ChatroomsController < ApplicationController
   def index
-    @chatrooms = Chatroom.all
+    @chatrooms = Chatroom.all.where("channel = ?", true).includes(:admin)
   end
 
   def show
