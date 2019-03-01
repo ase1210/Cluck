@@ -3,8 +3,10 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid lightgrey;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 20px;
   padding: 0 5%;
+
 }
 
 // 2nd level 
@@ -24,6 +26,7 @@
 .nav-left-align>div {
   padding: 5px;
   margin: 5px;
+  // cursor: not-allowed;
 }
 
 .logo {
@@ -40,10 +43,13 @@
 .nav-right-align>button {
   text-align: center;
   background-color: #611f69;
+  border: 2px solid #611f69;
   padding: 10px;
+  line-height: 16px;
   color: #fff;
   border-radius: 4px;
-  margin: 5px;
+  box-sizing: border-box;
+  text-size-adjust: 100%;
 }
 
 .nav-right-align>button:hover {
