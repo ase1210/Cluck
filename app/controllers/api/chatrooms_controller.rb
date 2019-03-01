@@ -9,18 +9,19 @@ class Api::ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
-    @chatroom.admin_id = current_user.id unless @chatroom.admin_id
 
     if @chatroom.save
       render :show
     else
-      render json: ["A chatroom with that name already exists"], status: 422
+      render json: @chatroom.errors.full_messages, status: 422
     end
+  rescue ActiveRecord::RecordNotFound
+    render json: ["At least one of those users no longer exists"], status: 422
   end
 
   private
 
   def chatroom_params
-    params.require(:chatroom).permit(:name, :channel, :admin_id)
+    params.require(:chatroom).permit(:name, :channel, :admin_id, user_ids: [])
   end
 end
