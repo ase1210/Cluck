@@ -6,7 +6,10 @@ import ChannelsIndexContainer from '../chatrooms/channels/channels_index_contain
 
 const LoggedInApp = (props) => (
   <div>
-    <Route path='/messages/new' component={ChannelsIndexContainer} />
+    <Switch>
+      <Route exact path='/messages/new' component={ChannelsIndexContainer} />
+      <Redirect to='/messages' />
+    </Switch>
   </div>
 )
 
