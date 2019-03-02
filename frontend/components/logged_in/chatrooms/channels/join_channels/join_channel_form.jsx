@@ -11,7 +11,7 @@ class JoinChannelForm extends React.Component {
     return (
       <div>
         <h2>Browse Channels</h2>
-        <input type="text" placeholder='Search channels' value="" />
+        <input type="text" placeholder='Search channels' />
         <ChannelsIndex />
       </div>
     )
