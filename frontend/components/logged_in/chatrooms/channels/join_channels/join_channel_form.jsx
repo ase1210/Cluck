@@ -1,11 +1,11 @@
 import React from 'react';
-import ChannelsIndexContainer from '../channels_index/channels_index_container';
+import ChannelsIndex from '../channels_index/channels_index';
 
 const JoinChannelForm = (props) => (
   <div>
     <h2>Browse Channels</h2>
     <input type="text" placeholder='Search channels' value="" />
-    <ChannelsIndexContainer />
+    <ChannelsIndex />
   </div>
 )
 
