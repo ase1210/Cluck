@@ -28,9 +28,9 @@ class User < ApplicationRecord
     class_name: :Chatroom
 
   has_many :chatrooms, through: :user_chatrooms, source: :chatroom do
-    def active
-      where("chatroom_users.active = ?", true)
-    end
+    # def active
+    #   where("chatroom_users.active = ?", true)
+    # endq
   end
 
   def self.find_by_credentials(un, pw)

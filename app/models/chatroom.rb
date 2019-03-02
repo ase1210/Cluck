@@ -21,8 +21,8 @@ class Chatroom < ApplicationRecord
 
   has_many :chatroom_users
   has_many :users, through: :chatroom_users, source: :user do
-    def active
-      where("chatroom_users.active = ?", true)
-    end
+    # def active
+    #   where("chatroom_users.status = ?", true)
+    # end
   end
 end
