@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import { postUser, postSession, deleteSession } from './util/session_api_util';
+
+window.postSession = postSession;
+window.deleteSession = deleteSession;
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');

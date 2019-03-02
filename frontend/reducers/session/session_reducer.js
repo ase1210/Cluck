@@ -12,7 +12,7 @@ const sessionReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       return {
-        currentUser: Object.keys(action.user)[0]
+        currentUser: Object.keys(action.payload.user)[0]
       };
     case LOGOUT_USER:
       return defaultState;

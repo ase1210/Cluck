@@ -5,6 +5,9 @@ import {
   RECEIVE_CHATROOM,
   RECEIVE_CHATROOMS
 } from '../../actions/chatroom_actions';
+import {
+  RECEIVE_USER
+} from '../../actions/session_actions';
 
 
 const chatroomsReducer = (state = {}, action) => {
@@ -12,6 +15,8 @@ const chatroomsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CHATROOMS:
       return action.chatrooms;
+    case RECEIVE_USER:
+      return action.payload.chatrooms;
     case RECEIVE_CHATROOM:
       return merge({}, state, action.chatroom);
     default:
