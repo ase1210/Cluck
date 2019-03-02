@@ -14,7 +14,7 @@ const chatroomsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CHATROOMS:
-      return action.chatrooms;
+      return merge({}, state, action.chatrooms);
     case RECEIVE_USER:
       return action.payload.chatrooms;
     case RECEIVE_CHATROOM:
