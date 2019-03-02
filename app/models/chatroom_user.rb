@@ -12,7 +12,7 @@
 
 class ChatroomUser < ApplicationRecord
   validates_uniqueness_of :chatroom_id, scope: [:user_id], message: "That user ia already in the chatroom"
-  validates :status, inclusion: {in: [:active, :inactive, :viewing, :pending, :invited]}
+  validates :status, inclusion: {in: ["active", "inactive", "viewing", "pending", "invited"]}
 
   belongs_to :chatroom
   belongs_to :user
