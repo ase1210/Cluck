@@ -4,7 +4,6 @@ import { selectChannels } from '../../../../../selectors/selectors';
 
 
 const mSTP = (state) => {
-  // debugger
   let channels = selectChannels(state);
   return ({
     channels
