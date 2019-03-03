@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Sidebar from './sidebar';
 import { selectChatrooms } from '../../../../selectors/selectors';
+import { fetchChatrooms } from '../../../../actions/chatroom_actions';
 
 const mSTP = (state) => {
   let chatrooms = selectChatrooms(state);
@@ -10,7 +11,7 @@ const mSTP = (state) => {
 };
 
 const mDTP = (dispatch) => ({
-  fetchUserChatrooms: () => dispatch(fetchUserChatrooms())
+  fetchChatrooms: () => dispatch(fetchChatrooms())
 });
 
 const SidebarContainer = connect(mSTP, mDTP)(Sidebar);

@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Sidebar = (props) => (
-  <>
-    <p>Sidebar</p>
-  </>
-)
+class Sidebar extends React.Component {
+  componentDidMount() {
+    this.props.fetchChatrooms();
+  }
+  render() {
+    return (
+      <>
+        <p>Sidebar</p>
+      </>
+    )
+  }
+}
 
 export default Sidebar;
