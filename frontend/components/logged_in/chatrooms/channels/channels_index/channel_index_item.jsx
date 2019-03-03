@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 
 const ChannelIndexItem = (props) => (
-  <p>Channel Index Item</p>
+  <>
+    <p className="channel-name"># {props.channel.name}</p>
+    <p className="channel-info">Created by {props.channel.admin} on DATE</p>
+  </>
 )
 
 export default ChannelIndexItem;
