@@ -1,11 +1,11 @@
 class Api::ChatroomsController < ApplicationController
   def index
-    @chatrooms = Chatroom.all.where("channel = ?", true).includes(:admin)
+    @channels = Chatroom.all.where("channel = ?", true).includes(:admin)
   end
 
-  def show
-    @chatroom = Chatroom.find_by(id: params[:id])
-  end
+  # def show
+  #   @chatroom = Chatroom.find_by(id: params[:id])
+  # end
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
