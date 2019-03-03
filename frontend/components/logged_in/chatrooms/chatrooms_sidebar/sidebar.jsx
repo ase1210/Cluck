@@ -1,10 +1,12 @@
 import React from 'react';
 import NavBarContainer from '../../../navbar/navbar_container';
+import { Link } from 'react-router-dom';
 
 class Sidebar extends React.Component {
   componentDidMount() {
     this.props.fetchChatrooms();
   }
+
 
   render() {
     return (
@@ -16,28 +18,33 @@ class Sidebar extends React.Component {
           </div>
         </div>
         <div className='presentational'></div>
-
         <div className='sidebar-data'>
           <div className='presentational'></div>
           <div className='section-header'>Channels</div>
           {this.props.chatrooms.channels.map(channel => {
-            let klass = (channel.id === parseInt(this.props.match.params.chatroomID)) ?
+            let klass = (channel.id === parseInt(this.props.match.params.chatroomId)) ?
               "selected" : "chatroom";
             return (
               <div className={`${klass}`} key={channel.id} >
-                <p># {channel.name}</p>
+                <Link to={`/messages/${channel.id}`}>
+                  <p># {channel.name}</p>
+                </Link>
               </div>)
           })}
-          <div className='selected presentational'></div>
           <div className='presentational'></div>
           <div className='section-header'>+ Add a channel</div>
           <div className='presentational'></div>
           <div className='section-header'>Direct Messages</div>
-          {this.props.chatrooms.directMessages.map(directMessage => (
-            <div className='chatroom' key={directMessage.id}>
-              <p># {directMessage.name}</p>
-            </div>
-          ))}
+          {this.props.chatrooms.directMessages.map(directMessage => {
+            let klass = (directMessage.id === parseInt(this.props.match.params.chatroomId)) ?
+              "selected" : "chatroom";
+            return (
+              <div className={`${klass}`} key={directMessage.id} >
+                <Link to={`/messages/${directMessage.id}`}>
+                  <p># {directMessage.name}</p>
+                </Link>
+              </div>)
+          })}
           <div className='presentational'></div>
           <div className='presentational'></div>
           <div className='presentational'></div>
