@@ -6,7 +6,6 @@ import ChannelsIndex from './chatrooms/channels/channels_index/channels_index';
 import SidebarContainer from './chatrooms/chatrooms_sidebar/sidebar_contrainer';
 const LoggedInApp = (props) => (
   <div>
-    <NavBarContainer />
     <Switch>
       <Route exact path='/messages' component={SidebarContainer} />
       <Route exact path='/messages/:chatroomId/channel/new' component={ChannelsIndex} />
