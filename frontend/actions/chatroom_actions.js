@@ -4,9 +4,9 @@ export const RECEIVE_CHATROOMS = "RECEIVE_CHATROOMS";
 export const RECEIVE_CHATROOM = "RECEIVE_CHATROOM";
 export const RECEIVE_CHATROOM_ERRORS = "RECEIVE_CHATROOM_ERRORS";
 
-const receiveChatrooms = (chatrooms) => ({
+const receiveChatrooms = (payload) => ({
   type: RECEIVE_CHATROOMS,
-  chatrooms
+  payload
 });
 
 const receiveChatroom = (chatroom) => ({
