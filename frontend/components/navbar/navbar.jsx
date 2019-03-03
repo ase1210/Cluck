@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 const SignedIn = ({ logout, currentUser }) => (
   <nav className='navbar-logged-in'>
     <p>{currentUser.username}</p>
-    <p onClick={logout}>Logout</p>
+    <p className='logout' onClick={logout}>Logout</p>
   </nav>
 )
 
