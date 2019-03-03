@@ -10,7 +10,7 @@ const LoggedInApp = (props) => (
       <Route exact path='/messages/:chatroomId' component={SidebarContainer} />
       <Route exact path='/messages/:chatroomId/channel/new' component={ChannelsIndex} />
       <Route exact path='/messages/:chatroomId/channel/join' component={JoinChannelFormContainer} />
-      <Redirect to='/messages' />
+      <Redirect to='/messages/1' />
     </Switch>
   </div>
 )

@@ -3,8 +3,21 @@ import NavBarContainer from '../../../navbar/navbar_container';
 import { Link } from 'react-router-dom';
 
 class Sidebar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.redirectToGeneral = this.redirectToGeneral.bind(this);
+  }
+
   componentDidMount() {
-    this.props.fetchChatrooms();
+    this.props.fetchChatrooms().then(
+      this.redirectToGeneral);
+  }
+
+  redirectToGeneral() {
+    if (!this.props.chatroomIds.includes(this.props.match.params.chatroomId)) {
+      let path = `/messages/${this.props.chatrooms.generalChatroomId}`;
+      this.props.history.push(path);
+    }
   }
 
 

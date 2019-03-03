@@ -25,8 +25,12 @@ export const selectChatrooms = (state) => {
   let chatrooms = Object.values(state.entities.chatrooms);
   let channels = [];
   let directMessages = [];
+  let generalChatroomId;
   chatrooms.forEach(chatroom => {
     if (chatroom.channel) {
+      if (chatroom.name === 'general') {
+        generalChatroomId = chatroom.id;
+      }
       channels.push(chatroom);
     } else {
       directMessages.push(chatroom);
@@ -34,6 +38,11 @@ export const selectChatrooms = (state) => {
   });
   return {
     channels,
-    directMessages
+    directMessages,
+    generalChatroomId
   };
 };
+
+export const selectChatroomIds = (state) => (
+  Object.keys(state.entities.chatrooms)
+);

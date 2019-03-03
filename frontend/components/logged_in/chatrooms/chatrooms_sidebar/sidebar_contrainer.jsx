@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import Sidebar from './sidebar';
-import { selectChatrooms } from '../../../../selectors/selectors';
+import { selectChatrooms, selectChatroomIds } from '../../../../selectors/selectors';
 import { fetchChatrooms } from '../../../../actions/chatroom_actions';
 
 const mSTP = (state) => {
   let chatrooms = selectChatrooms(state);
+  let chatroomIds = selectChatroomIds(state);
   return {
-    chatrooms
+    chatrooms,
+    chatroomIds,
   };
 };
 
