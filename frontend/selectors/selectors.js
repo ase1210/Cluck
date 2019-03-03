@@ -20,3 +20,20 @@ export const selectChannels = (state) => {
     available
   };
 };
+
+export const selectChatrooms = (state) => {
+  let chatrooms = Object.values(state.entities.chatrooms);
+  let channels = [];
+  let directMessages = [];
+  chatrooms.forEach(chatroom => {
+    if (chatroom.channel) {
+      channels.push(chatroom);
+    } else {
+      directMessages.push(chatroom);
+    }
+  });
+  return {
+    channels,
+    directMessages
+  };
+};
