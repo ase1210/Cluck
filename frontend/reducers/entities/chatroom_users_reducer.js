@@ -14,6 +14,6 @@ const chatroomUsersReducer = (state = {}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default chatroomUsersReducer;
