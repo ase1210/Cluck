@@ -10,9 +10,9 @@ class Api::ChatroomUsersController < ApplicationController
   end
 
   def update
-    @chatroom_user = ChatroomUser.find_by(chatroom_id: params[:id], user_id: params[:chatroom_user][:user_id])
+    @chatroom_user = ChatroomUser.find_by(id: params[:id])
 
-    if @chatroom_user.update(chatroom_user_params)
+    if @chatroom_user && @chatroom_user.update(chatroom_user_params)
       render :show
     else
       render json: @chatroom_user.errors.full_messages, status: 422

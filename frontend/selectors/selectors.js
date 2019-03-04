@@ -23,7 +23,7 @@ export const selectChannels = (state, str) => {
 export const selectChatrooms = (state) => {
   const currentUser = parseInt(state.session.currentUser);
   let userChatroomIds = Object.values(state.entities.chatroomUsers)
-    .filter(chatroomUser => chatroomUser.userId === currentUser)
+    .filter(chatroomUser => chatroomUser.userId === currentUser && ["active", "invited", 'viewing'].includes(chatroomUser.status))
     .map(chatroomUser => chatroomUser.chatroomId);
   let chatrooms = Object.values(state.entities.chatrooms);
   let channels = [];

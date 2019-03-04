@@ -13,7 +13,7 @@ const chatroomsReducer = (state = {}, action) => {
     case RECEIVE_CHATROOMS:
       return merge({}, state, action.payload.chatrooms, action.payload.channels);
     case RECEIVE_CHATROOM:
-      return merge({}, state, action.chatroom);
+      return merge({}, state, action.payload.chatroom);
     default:
       return state;
   }

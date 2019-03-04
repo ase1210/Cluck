@@ -1,4 +1,5 @@
 import React from 'react';
+import { updateChatroomUser } from '../../../../../actions/chatroom_user_actions';
 
 class AddChannelForm extends React.Component {
   constructor(props) {
@@ -11,6 +12,8 @@ class AddChannelForm extends React.Component {
     };
     this.handleCancelClick = this.handleCancelClick.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.handleCreateChannel = this.handleCreateChannel.bind(this);
+    this.handleUpdateChatroomUser = this.handleUpdateChatroomUser.bind(this);
   }
 
   renderErrors() {
@@ -34,7 +37,23 @@ class AddChannelForm extends React.Component {
 
   handleCreateChannel(e) {
     e.preventDefault();
-    this.props.createChatroom(this.state);
+    this.props.createChatroom(this.state).then(
+      (action) => this.handleUpdateChatroomUser(action.payload)
+    );
+  }
+
+  handleUpdateChatroomUser(payload) {
+    console.log(payload);
+    this.props.updateChatroomUser(
+      {
+        id: Object.keys(payload.chatroomUser)[0],
+        status: 'active',
+        user_id: this.props.currentUser,
+        chatroom_id: Object.keys(payload.chatroom)[0]
+      }
+    ).then(
+      this.props.history.push(`/messages/${Object.keys(payload.chatroom)[0]}`)
+    );
   }
 
   render() {

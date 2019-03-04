@@ -1,6 +1,6 @@
 json.channels do
   @channels.each do |channel|
-    json.partial! "show", channel: channel
+    json.partial! "show", chatroom: channel
   end
 end
 

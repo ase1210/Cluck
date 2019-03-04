@@ -9,9 +9,9 @@ const receiveChatrooms = (payload) => ({
   payload
 });
 
-const receiveChatroom = (chatroom) => ({
+const receiveChatroom = (payload) => ({
   type: RECEIVE_CHATROOM,
-  chatroom
+  payload
 });
 
 const receiveChatroomErrors = (errors) => ({
