@@ -9,7 +9,16 @@ class ChannelsIndex extends React.Component {
   }
 
   handleAvailableClick(id) {
-
+    return () => {
+      let chatroomUser = {
+        user_id: this.props.currentUser,
+        chatroom_id: `${id}`,
+        status: "active"
+      };
+      this.props.createChatroomUser(chatroomUser).then(
+        this.props.history.push(`/messages/${id}`)
+      );
+    };
   }
 
   handleSubscribedClick(id) {
@@ -40,7 +49,7 @@ class ChannelsIndex extends React.Component {
             <></>
         }
         {this.props.channels.available.map(channel =>
-          <div key={channel.id} >
+          <div key={channel.id} onClick={this.handleAvailableClick(channel.id)}>
             <ChannelIndexItem channel={channel} formatDate={this.props.formatDate} />
           </div>
         )}

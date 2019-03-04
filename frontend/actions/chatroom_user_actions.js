@@ -9,7 +9,6 @@ const receiveChatroomUser = (chatroomUser) => ({
 
 export const createChatroomUser = (chatroomUser) => dispatch => (
   ChatroomUserAPIUtil.postChatroomUser(chatroomUser).then(
-    chatroomUser => dispatch(receiveChatroomUser(chatroomUser)),
-    errors => dispatch(receiveChatroomErrors(errors))
+    chatroomUser => dispatch(receiveChatroomUser(chatroomUser))
   )
 );
