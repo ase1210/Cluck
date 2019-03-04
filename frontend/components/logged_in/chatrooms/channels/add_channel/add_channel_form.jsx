@@ -56,13 +56,17 @@ class AddChannelForm extends React.Component {
     );
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div className='acf-parent'>
         <div className='add-channel-form'>
           <h1>Create a channel</h1>
           <p className='header-desc'>Channels are where your friends communicate.  They're best when organized around a topic - #music, for example.</p>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label>Name
             <br />
               <input type="text" placeholder='e.g. music' autoFocus onChange={this.handleInput} />
@@ -70,8 +74,8 @@ class AddChannelForm extends React.Component {
             </label>
             <div className='buttons'>
 
-              <button onClick={this.handleCancelClick}>Cancel</button>
               <button className='create' onClick={this.handleCreateChannel}>Create Channel</button>
+              <button onClick={this.handleCancelClick}>Cancel</button>
             </div>
           </form>
         </div>

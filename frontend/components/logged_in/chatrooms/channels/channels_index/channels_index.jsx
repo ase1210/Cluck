@@ -6,7 +6,6 @@ class ChannelsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubscribedClick = this.handleSubscribedClick.bind(this);
-    this.handleUpdateChatroomUser = this.handleUpdateChatroomUser.bind(this);
     this.handleAvailableClick = this.handleAvailableClick.bind(this);
   }
 

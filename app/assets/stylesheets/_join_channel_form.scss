@@ -39,14 +39,13 @@
       width: 100%;
       border: 1px solid #868686;
       border-radius: 4px;
-      display: flex;
-      align-items: center;
       cursor: text;
-      font-size: 16px;
       margin-bottom: 8px;
-      line-height: 24px;
 
       input {
+        height: 40px;
+        font-size: 16px;
+        line-height: 24px;
         width: 100%;
         padding: 10.4px 12px 8.8px 40px;
       }
