@@ -6,6 +6,8 @@ class ChannelsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubscribedClick = this.handleSubscribedClick.bind(this);
+    this.handleUpdateChatroomUser = this.handleUpdateChatroomUser.bind(this);
+    this.handleAvailableClick = this.handleAvailableClick.bind(this);
   }
 
   handleAvailableClick(id) {
@@ -15,9 +17,14 @@ class ChannelsIndex extends React.Component {
         chatroom_id: `${id}`,
         status: "active"
       };
-      this.props.createChatroomUser(chatroomUser).then(
-        this.props.history.push(`/messages/${id}`)
-      );
+      if (this.props.userChatroomIds.includes(id)) {
+        this.props.updateChatroomUser(chatroomUser).then(
+          this.props.history.push(`/messages/${id}`));
+      } else {
+        this.props.createChatroomUser(chatroomUser).then(
+          this.props.history.push(`/messages/${id}`)
+        );
+      }
     };
   }
 

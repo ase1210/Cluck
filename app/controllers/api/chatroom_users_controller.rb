@@ -10,7 +10,7 @@ class Api::ChatroomUsersController < ApplicationController
   end
 
   def update
-    @chatroom_user = ChatroomUser.find_by(id: params[:id])
+    @chatroom_user = ChatroomUser.find_by(user_id: params[:chatroom_user][:user_id], chatroom_id: params[:chatroom_user][:chatroom_id])
 
     if @chatroom_user && @chatroom_user.update(chatroom_user_params)
       render :show

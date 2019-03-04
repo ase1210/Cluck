@@ -15,7 +15,7 @@ end
 json.chatroom_users do
   current_user.user_chatrooms.each do |user_chatroom|
     json.set! user_chatroom.id do
-      json.extract! user_chatroom, :user_id, :chatroom_id, :status
+      json.extract! user_chatroom, :user_id, :chatroom_id, :status, :id
     end
   end
 end

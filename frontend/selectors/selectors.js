@@ -51,3 +51,21 @@ export const selectChatrooms = (state) => {
 export const selectChatroomIds = (state) => (
   Object.keys(state.entities.chatrooms)
 );
+
+export const selectUserChatroomIds = (state) => {
+  const currentUser = parseInt(state.session.currentUser);
+  let userChatroomIds = Object.values(state.entities.chatroomUsers)
+    .filter(chatroomUser => chatroomUser.userId === currentUser)
+    .map(chatroomUser => chatroomUser.chatroomId);
+  return userChatroomIds;
+};
+
+// export const selectChatroomUserJoinsId = (state) => {
+//   const currentUser = parseInt(state.session.currentUser);
+
+//   let userChatrooms = Object.values(state.entities.chatroomUsers)
+//     .filter(chatroomUser => chatroomUser.userId === currentUser);
+//   return {
+//     userChatrooms
+//   };
+// };
