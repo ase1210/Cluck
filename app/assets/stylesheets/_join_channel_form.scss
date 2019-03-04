@@ -87,6 +87,12 @@
         width: 611px;
       }
 
+
+      .jcf-cbc-channel:hover {
+        background-color: #E8F5FA;
+        border: 1px solid #C7E5F4;
+      }
+
       .jcf-cbc-channel {
         border: 1px solid transparent;
         border-top: 1px solid rgb(221, 221, 221);
@@ -102,6 +108,7 @@
           font-weight: 700;
           width: 518px;
           height: 29px;
+          text-size-adjust: 100%;
 
         }
 
