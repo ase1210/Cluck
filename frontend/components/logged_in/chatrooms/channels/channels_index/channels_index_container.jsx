@@ -3,8 +3,8 @@ import ChannelsIndex from './channels_index';
 import { selectChannels } from '../../../../../selectors/selectors';
 import { formatDate } from '../../../../../util/date_util';
 
-const mSTP = (state) => {
-  let channels = selectChannels(state);
+const mSTP = (state, ownProps) => {
+  let channels = selectChannels(state, ownProps.search);
   return ({
     channels,
     formatDate: (date) => formatDate(date)
