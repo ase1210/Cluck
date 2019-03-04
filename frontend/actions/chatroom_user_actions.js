@@ -12,3 +12,9 @@ export const createChatroomUser = (chatroomUser) => dispatch => (
     chatroomUser => dispatch(receiveChatroomUser(chatroomUser))
   )
 );
+
+export const updateChatroomUser = (chatroomUser) => dispatch => (
+  ChatroomUserAPIUtil.patchChatroomUser(chatroomUser).then(
+    chatroomUser => dispatch(receiveChatroomUser(chatroomUser))
+  )
+);
