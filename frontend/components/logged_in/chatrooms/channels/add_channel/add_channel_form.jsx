@@ -20,16 +20,23 @@ class AddChannelForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Create a channel</h2>
-        <p>Channels are where your friends communicate.  They're best when organized around a topic - #music, for example.</p>
-        <form>
-          <label>Name
+      <div className='acf-parent'>
+        <div className='add-channel-form'>
+          <h1>Create a channel</h1>
+          <p className='header-desc'>Channels are where your friends communicate.  They're best when organized around a topic - #music, for example.</p>
+          <form>
+            <label>Name
             <br />
-            <input type="text" placeholder='e.g. music' />
-            <p>Names must be lowercase, without spaces or periods, and shorter than 22 characters.</p>
-          </label>
-        </form>
+              <input type="text" placeholder='e.g. music' />
+              <p>Names must be lowercase, without spaces or periods, and shorter than 22 characters.</p>
+            </label>
+            <div className='buttons'>
+
+              <button>Cancel</button>
+              <button className='create'>Create Channel</button>
+            </div>
+          </form>
+        </div>
       </div>
     )
   }

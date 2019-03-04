@@ -1,0 +1,92 @@
+.acf-parent {
+  padding: 138px 32px 32px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  position: absolute;
+
+  .add-channel-form {
+    height: 526px;
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      height: 41px;
+      margin-bottom: 16px;
+      font-weight: 800;
+      font-size: 34px;
+      cursor: default;
+      box-sizing: border-box;
+    }
+
+    .header-desc {
+      box-sizing: border-box;
+      font-size: 14px;
+      color: #BABABA;
+      line-height: 20px;
+      margin-bottom: 24px;
+    }
+
+    form {
+
+      label {
+        font-weight: 700;
+        line-height: 24px;
+        font-size: 16px;
+        margin-bottom: 4px;
+        height: 24px;
+
+        input {
+          width: 100%;
+          border: 1px solid #868686;
+          border-radius: 4px;
+          height: 48px;
+          padding: 12px 12px 12px 32px;
+          font-weight: 400;
+
+        }
+
+        input::placeholder {
+          color: #9a9a9a;
+        }
+      }
+
+
+      p {
+        font-size: 12px;
+        line-height: 16px;
+        color: #616061;
+        font-weight: 400;
+        margin-bottom: 32px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: flex-end;
+        font-weight: 400;
+        font-size: 18px;
+        text-size-adjust: 100%;
+
+        button {
+          border: 1px solid rgb(29, 28, 29);
+          padding: 14px 18px 16px 18px;
+          border-radius: 4px;
+          margin-left: 8px;
+        }
+
+        .create {
+          border: 0px solid auto;
+          background-color: rgb(0, 122, 90);
+          color: #fff;
+
+        }
+      }
+
+    }
+
+  }
+}
