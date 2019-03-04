@@ -1,5 +1,4 @@
 .jcf-parent {
-  padding: 0 32px;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -10,6 +9,7 @@
 
 
   .join-channel-form {
+    padding: 0 32px;
     display: flex;
     flex-direction: column;
     padding-top: 105px;
@@ -41,7 +41,6 @@
       border-radius: 4px;
       display: flex;
       align-items: center;
-      padding: 10.4px 12px 8.8px 40px;
       cursor: text;
       font-size: 16px;
       margin-bottom: 8px;
@@ -49,6 +48,7 @@
 
       input {
         width: 100%;
+        padding: 10.4px 12px 8.8px 40px;
       }
 
       input::placeholder {
