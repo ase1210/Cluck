@@ -33,40 +33,41 @@ class ChannelsIndex extends React.Component {
         {
           this.props.channels.available.length === 0 && this.props.channels.subscribed.length === 0
             ?
-            <div>
-              <p>No matches found for <span style={{ fontWeight: 700 }}>{`${this.props.search}`}</span></p>
+            <div className='jcf-no-match'>
+              <span>No matches found for <strong>{`${this.props.search}`}</strong></span>
             </div>
             :
             <></>
         }
-        {
-          this.props.channels.available.length !== 0
-            ?
-            <div>
-              <p>Channels you can join</p>
+        <div className='jcf-channel-browser-container'>
+
+          {
+            this.props.channels.available.length !== 0
+              ?
+              <div className='jcf-cbc-section-head'>Channels you can join</div>
+              :
+              <></>
+          }
+          {this.props.channels.available.map(channel =>
+            <div className='jcf-cbc-channel' key={channel.id}
+              onClick={this.handleAvailableClick(channel.id)}>
+              <ChannelIndexItem channel={channel} formatDate={this.props.formatDate} />
             </div>
-            :
-            <></>
-        }
-        {this.props.channels.available.map(channel =>
-          <div key={channel.id} onClick={this.handleAvailableClick(channel.id)}>
-            <ChannelIndexItem channel={channel} formatDate={this.props.formatDate} />
-          </div>
-        )}
-        {
-          this.props.channels.subscribed.length !== 0
-            ?
-            <div>
-              <p>Channels you belong to</p>
+          )}
+          {
+            this.props.channels.subscribed.length !== 0
+              ?
+              <div className='jcf-cbc-section-head'>Channels you belong to</div>
+              :
+              <></>
+          }
+          {this.props.channels.subscribed.map(channel =>
+            <div className='jcf-cbc-channel' key={channel.id}
+              onClick={this.handleSubscribedClick(channel.id)}>
+              <ChannelIndexItem channel={channel} formatDate={this.props.formatDate} />
             </div>
-            :
-            <></>
-        }
-        {this.props.channels.subscribed.map(channel =>
-          <div key={channel.id} onClick={this.handleSubscribedClick(channel.id)}>
-            <ChannelIndexItem channel={channel} formatDate={this.props.formatDate} />
-          </div>
-        )}
+          )}
+        </div>
       </>
     )
   }

@@ -18,10 +18,18 @@ class JoinChannelForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Browse Channels</h2>
-        <input type="text" placeholder='Search channels' onChange={this.handleInput} />
-        <ChannelsIndexContainer search={this.state.search} />
+      <div className='jcf-parent'>
+        <div className='join-channel-form'>
+          <div className='jcf-title'>
+            <h1>Browse channels</h1>
+          </div>
+          <div className='jcf-search'>
+            <input type="text" placeholder='Search channels' onChange={this.handleInput} />
+          </div>
+          <div className='presentational'></div>
+          <ChannelsIndexContainer search={this.state.search} />
+        </div>
+
       </div>
     )
   }
