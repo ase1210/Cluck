@@ -1,4 +1,4 @@
-.sidebar {
+.sidebar-parent {
   display: flex;
   flex-direction: column;
   background-color: #3F0E40;
@@ -13,9 +13,6 @@
   color: rgb(197, 183, 198);
   text-decoration: none solid #fff;
 
-  .presentational {
-    height: 18px;
-  }
 
   .sidebar-nav {
     padding-left: 15px;
@@ -37,40 +34,67 @@
     }
   }
 
-  .sidebar-data {
+  .sidebar {
     display: flex;
     flex-direction: column;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    width: 220px;
+    height: 100vh;
+    overflow: scroll;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgb(197, 183, 198);
+    text-decoration: none solid #fff;
 
-    .section-header {
-      padding-left: 15px;
-      padding-right: 12px;
+    .presentational {
+      height: 18px;
     }
 
-    .chatroom {
-      padding-left: 20px;
-      padding-right: 12px;
-      font-size: 15px;
+
+    .sidebar-data {
+      display: flex;
+      flex-direction: column;
+
+      .section-header {
+        padding-left: 15px;
+        padding-right: 12px;
+        min-height: 26px;
+      }
+
+      .chatroom {
+        min-height: 26px;
+        padding-left: 20px;
+        padding-right: 12px;
+        font-size: 15px;
+      }
+
+      .selected {
+        padding-left: 20px;
+        padding-right: 12px;
+        font-size: 15px;
+        color: #fff;
+        background-color: rgb(17, 100, 163)
+      }
+
+      .presentational {
+        min-height: 18px;
+      }
+
     }
 
-    .selected {
-      padding-left: 20px;
-      padding-right: 12px;
-      font-size: 15px;
-      color: #fff;
-      background-color: rgb(17, 100, 163)
-    }
   }
 
-}
+  .app-title {
+    color: #fff;
+    font-weight: 700;
+  }
 
-.app-title {
-  color: #fff;
-  font-weight: 700;
-}
-
-.chatroom,
-.section-header,
-.selected,
-.logout {
-  cursor: pointer;
+  .chatroom,
+  .section-header,
+  .selected,
+  .logout {
+    cursor: pointer;
+  }
 }
