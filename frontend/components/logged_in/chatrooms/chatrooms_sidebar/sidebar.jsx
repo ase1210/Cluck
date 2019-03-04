@@ -44,8 +44,8 @@ class Sidebar extends React.Component {
             <NavBarContainer />
           </div>
         </div>
+        <div className='presentational'></div>
         <div className='sidebar'>
-          <div className='presentational'></div>
           <div className='sidebar-data'>
             <div className='presentational'></div>
             <div className='section-header' onClick={this.routeChange('join')}>Channels</div>
