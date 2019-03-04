@@ -1,7 +1,22 @@
 import React from 'react';
 import ChannelIndexItem from './channel_index_item';
+import { withRouter } from 'react-router-dom';
 
 class ChannelsIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubscribedClick = this.handleSubscribedClick.bind(this);
+  }
+
+  handleAvailableClick(id) {
+
+  }
+
+  handleSubscribedClick(id) {
+    return () => {
+      this.props.history.push(`/messages/${id}`);
+    };
+  }
 
   render() {
     return (
@@ -39,7 +54,7 @@ class ChannelsIndex extends React.Component {
             <></>
         }
         {this.props.channels.subscribed.map(channel =>
-          <div key={channel.id} >
+          <div key={channel.id} onClick={this.handleSubscribedClick(channel.id)}>
             <ChannelIndexItem channel={channel} formatDate={this.props.formatDate} />
           </div>
         )}
@@ -49,4 +64,4 @@ class ChannelsIndex extends React.Component {
 }
 
 
-export default ChannelsIndex;
+export default withRouter(ChannelsIndex);
