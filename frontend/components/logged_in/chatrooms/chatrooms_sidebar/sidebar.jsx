@@ -6,6 +6,7 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.redirectToGeneral = this.redirectToGeneral.bind(this);
+    this.handleLeaveChatroom = this.handleLeaveChatroom.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +35,20 @@ class Sidebar extends React.Component {
     };
   }
 
+  handleLeaveChatroom(id) {
+    let chatroomUser = {
+      user_id: this.props.currentUser,
+      chatroom_id: id,
+      status: 'inactive'
+    };
+    return () => {
+      this.props.updateChatroomUser(chatroomUser);
+      if (parseInt(this.props.match.params.chatroomId) !== this.props.chatrooms.generalChatroomId) {
+        let path = `/messages/${this.props.chatrooms.generalChatroomId}`;
+        this.props.history.push(path);
+      }
+    }
+  }
 
   render() {
     return (
@@ -57,6 +72,11 @@ class Sidebar extends React.Component {
                   <Link to={`/messages/${channel.id}`}>
                     <p># {channel.name}</p>
                   </Link>
+                  {
+                    (this.props.chatrooms.generalChatroomId === channel.id)
+                      ? <></> :
+                      <span className='leave-chatroom' onClick={this.handleLeaveChatroom(channel.id)}>x</span>
+                  }
                 </div>)
             })}
             <div className='presentational'></div>
@@ -71,6 +91,8 @@ class Sidebar extends React.Component {
                   <Link to={`/messages/${directMessage.id}`}>
                     <p># {directMessage.name}</p>
                   </Link>
+                  <span className='leave-chatroom' onClick={this.handleLeaveChatroom(directMessage.id)}>x</span>
+
                 </div>)
             })}
             <div className='presentational'></div>
