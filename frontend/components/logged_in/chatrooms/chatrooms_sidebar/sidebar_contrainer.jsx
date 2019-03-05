@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Sidebar from './sidebar';
+import { withRouter } from 'react-router-dom'
 import { selectChatrooms, selectChatroomIds } from '../../../../selectors/selectors';
 import { fetchChatrooms } from '../../../../actions/chatroom_actions';
 import { updateChatroomUser } from '../../../../actions/chatroom_user_actions';
@@ -19,6 +20,6 @@ const mDTP = (dispatch) => ({
   updateChatroomUser: (chatroomUser) => dispatch(updateChatroomUser(chatroomUser)),
 });
 
-const SidebarContainer = connect(mSTP, mDTP)(Sidebar);
+const SidebarContainer = withRouter(connect(mSTP, mDTP)(Sidebar));
 
 export default SidebarContainer;
