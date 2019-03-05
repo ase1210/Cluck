@@ -1,5 +1,14 @@
 import React from 'react';
-import { updateChatroomUser } from '../../../../../actions/chatroom_user_actions';
+
+const ChatroomErrors = (props) => (
+  <>
+    {
+      props.chatroomErrors.map((error, idx) => (
+        <span className='chatroom-errors-container' key={idx}>{error}</span>
+      ))
+    }
+  </>
+)
 
 class AddChannelForm extends React.Component {
   constructor(props) {
@@ -26,6 +35,9 @@ class AddChannelForm extends React.Component {
 
   handleInput(e) {
     this.setState({ name: e.target.value });
+    if (this.props.chatroomErrors.length !== 0) {
+      this.props.clearErrors()
+    }
   }
 
   handleCancelClick(e) {
@@ -67,7 +79,8 @@ class AddChannelForm extends React.Component {
           <p className='header-desc'>Channels are where your friends communicate.  They're best when organized around a topic - #music, for example.</p>
           <form onSubmit={this.handleSubmit}>
             <label>Name
-            <br />
+              {this.props.chatroomErrors.length === 0 ? <></> : <ChatroomErrors chatroomErrors={this.props.chatroomErrors} />}
+              <br />
               <input type="text" placeholder='e.g. music' autoFocus onChange={this.handleInput} />
               <p>Names must be lowercase, without spaces or periods, and shorter than 22 characters.</p>
             </label>
