@@ -43,7 +43,6 @@ class AddChannelForm extends React.Component {
   }
 
   handleUpdateChatroomUser(payload) {
-    console.log(payload);
     this.props.updateChatroomUser(
       {
         id: Object.keys(payload.chatroomUser)[0],
