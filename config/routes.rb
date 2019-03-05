@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :chatrooms, only: [:index, :show, :create]
     resources :chatroom_users, only: [:create, :update]
+    resources :messages, only: [:create, :destroy]
   end
 
   root to: "static_pages#root"
