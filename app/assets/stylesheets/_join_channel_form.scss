@@ -33,13 +33,19 @@
       }
 
       .escape-form {
-        font-size: 24px;
+        font-size: 30px;
+        padding: 5px;
+        box-sizing: content-box;
         height: 30px;
         width: 30px;
         text-align: center;
-        border: 1px solid black;
+        border: 1px solid transparent;
         border-radius: 50%;
         cursor: pointer;
+      }
+
+      .escape-form:hover {
+        background-color: #DDDDDD;
       }
 
 
@@ -99,6 +105,7 @@
         font-weight: 700;
         padding: 4px 0 4px 12px;
         width: 611px;
+        cursor: default;
       }
 
 
