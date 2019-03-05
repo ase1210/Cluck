@@ -13,11 +13,8 @@ class Api::MessagesController < ApplicationController
 
   def destroy
     @message = Message.find_by(id: params[:id])
-    if @message.delete
-      render :show
-    else
-      render json: ["That message is already deleted"], status: 422
-    end
+    @message.delete
+    render json: ["That message does not exist"], status: 422 unless @message
   end
 
   private
