@@ -42,11 +42,11 @@ class Sidebar extends React.Component {
     };
     return () => {
       this.props.updateChatroomUser(chatroomUser);
-      if (parseInt(this.props.match.params.chatroomId) !== this.props.chatrooms.generalChatroomId) {
+      if (parseInt(this.props.match.params.chatroomId) === id) {
         let path = `/messages/${this.props.chatrooms.generalChatroomId}`;
         this.props.history.push(path);
       }
-    }
+    };
   }
 
   render() {
