@@ -1,4 +1,4 @@
-export const postMessage = (message) => (
+export const postNewMessage = (message) => (
   $.ajax({
     method: 'POST',
     url: `/api/messages`,
@@ -12,7 +12,7 @@ export const postMessage = (message) => (
 export const deleteMessage = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/message/${id}`,
+    url: `/api/messages/${id}`,
     dataType: 'json',
   })
 );
