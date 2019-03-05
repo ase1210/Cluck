@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../../../navbar/navbar_container';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -104,4 +104,4 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);
