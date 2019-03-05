@@ -25,4 +25,6 @@ class Chatroom < ApplicationRecord
       where("chatroom_users.status IN (?)", ["active", "invited"])
     end
   end
+
+  has_many :messages
 end

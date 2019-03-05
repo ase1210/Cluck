@@ -33,6 +33,11 @@ class User < ApplicationRecord
     end
   end
 
+  has_many :messages,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Message
+
   def self.find_by_credentials(un, pw)
     user = User.find_by(username: un)
     (user && user.is_password?(pw)) ? user : nil
