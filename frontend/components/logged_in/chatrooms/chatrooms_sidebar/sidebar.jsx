@@ -29,7 +29,6 @@ class Sidebar extends React.Component {
 
   routeChange(destination) {
     return () => {
-      // console.log(this.props.location);
       let path = this.props.location.pathname + `/${destination}`;
       this.props.history.push(path);
     };
