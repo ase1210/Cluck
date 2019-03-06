@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ChannelsIndex from './channels_index';
-import { selectChannels, selectUserChatroomIds } from '../../../../../selectors/selectors';
+import { selectChannels, selectUserChatroomIds } from '../../../../../selectors/chatrooms_selectors';
 import { formatDate } from '../../../../../util/date_util';
 import { createChatroomUser, updateChatroomUser } from '../../../../../actions/chatroom_user_actions';
 

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Sidebar from './sidebar';
 import { withRouter } from 'react-router-dom'
-import { selectChatrooms, selectChatroomIds } from '../../../../selectors/selectors';
+import { selectChatrooms, selectChatroomIds } from '../../../../selectors/chatrooms_selectors';
 import { fetchChatrooms } from '../../../../actions/chatroom_actions';
 import { updateChatroomUser } from '../../../../actions/chatroom_user_actions';
 
