@@ -27,4 +27,5 @@ class Chatroom < ApplicationRecord
   end
 
   has_many :messages
+  has_many :message_authors, through: :messages, source: :author
 end
