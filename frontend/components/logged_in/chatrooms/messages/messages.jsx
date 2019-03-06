@@ -4,11 +4,25 @@ import MessageIndex from './message_index';
 import MessageForm from './message_form';
 
 
+const Loading = () => (
+  <div className='loader'></div>
+)
+
+
+
 const Messages = (props) => (
   <div className="messages-parent">
-    <MessageHeader activeChatroom={props.activeChatroom} />
-    <MessageIndex />
-    <MessageForm />
+    {
+      props.activeChatroom
+        ?
+        <>
+          <MessageHeader activeChatroom={props.activeChatroom} />
+          <MessageIndex />
+          <MessageForm />
+        </>
+        :
+        <Loading />
+    }
   </div>
 )
 
