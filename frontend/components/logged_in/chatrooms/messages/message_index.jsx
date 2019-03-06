@@ -5,7 +5,7 @@ const MessageIndex = (props) => (
   <>
     <section className='message-area'>
       {props.chatroomMessages.map(message => (
-        <MessageIndexItem key={message.id} message={message} formatDateTime={props.formatDateTime} />
+        <MessageIndexItem key={message.id} message={message} {...props} />
       ))}
     </section>
   </>
