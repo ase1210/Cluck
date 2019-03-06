@@ -1,6 +1,7 @@
 class Api::ChatroomsController < ApplicationController
   def index
     @channels = Chatroom.all.where("channel = ?", true).includes(:admin)
+    @subscribed_chatrooms = current_user.chatrooms.subscribed.includes(:messages, :message_authors)
   end
 
   # def show
