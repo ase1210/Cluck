@@ -1,11 +1,11 @@
 import React from 'react';
-import SidebarContainer from './chatrooms_sidebar/sidebar_contrainer';
-import Messages from './messages/messages';
+import SidebarContainer from './chatrooms_sidebar/sidebar_container';
+import MessagesContainer from './messages/messages_container';
 
 const MainView = (props) => (
   <div className='main-view'>
     <SidebarContainer />
-    <Messages />
+    <MessagesContainer />
   </div>
 )
 

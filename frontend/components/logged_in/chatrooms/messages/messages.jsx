@@ -6,7 +6,7 @@ import MessageForm from './message_form';
 
 const Messages = (props) => (
   <div className="messages-parent">
-    <MessageHeader />
+    <MessageHeader activeChatroom={props.activeChatroom} />
     <MessageIndex />
     <MessageForm />
   </div>
