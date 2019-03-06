@@ -10,10 +10,10 @@ const MessageIndexItem = (props) => (
 
         <div className='message-info'>
           <span className='mi-username'>USERNAME</span>
-          <span className='mi-time'>MESSAGE TIME w. Date</span>
+          <span className='mi-time'>{props.formatDateTime(props.message.createdAt)}</span>
         </div>
         <div className='message-content'>
-          <p>MESSAGE CONTENT</p>
+          <p>{props.message.body}</p>
         </div>
       </div>
     </div>
