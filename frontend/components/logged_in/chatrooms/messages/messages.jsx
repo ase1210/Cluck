@@ -18,7 +18,7 @@ const Messages = (props) => (
         <>
           <MessageHeader activeChatroom={props.activeChatroom} />
           <MessageIndexContainer />
-          <MessageForm activeChatroom={props.activeChatroom} />
+          <MessageForm {...props} />
         </>
         :
         <Loading />

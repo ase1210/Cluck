@@ -7,8 +7,9 @@ import { createMessage } from '../../../../actions/message_actions';
 const mSTP = (state, ownProps) => {
   let chatroomId = parseInt(ownProps.match.params.chatroomId);
   let activeChatroom = state.entities.chatrooms[chatroomId];
+  let currentUser = parseInt(state.session.currentUser);
   return ({
-    activeChatroom
+    activeChatroom, currentUser
   });
 };
 

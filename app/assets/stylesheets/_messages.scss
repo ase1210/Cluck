@@ -84,15 +84,21 @@
     grid-template-rows: 15px 44px 22px;
 
     input {
-      padding-left: 20px;
       grid-column: 2;
       grid-row: 2;
+      padding-left: 20px;
       border: 2px solid #aaaaaa;
       border-radius: 8px;
     }
 
-    input::placeholder {
-      color: #9a9a9a;
+    button {
+      display: none;
+      width: 1px;
+      height: 1px;
     }
+  }
+
+  input::placeholder {
+    color: #9a9a9a;
   }
 }
