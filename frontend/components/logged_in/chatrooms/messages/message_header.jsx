@@ -3,7 +3,7 @@ import React from 'react';
 const MessageHeader = (props) => (
   <>
     <header>
-      <p># CHATROOM NAME</p>
+      <p>#{props.activeChatroom.name}</p>
     </header>
   </>
 )
