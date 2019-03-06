@@ -1,7 +1,7 @@
 import React from 'react';
 import MessageHeader from './message_header';
-import MessageIndex from './message_index';
 import MessageForm from './message_form';
+import MessageIndexContainer from './message_index_container';
 
 
 const Loading = () => (
@@ -17,7 +17,7 @@ const Messages = (props) => (
         ?
         <>
           <MessageHeader activeChatroom={props.activeChatroom} />
-          <MessageIndex />
+          <MessageIndexContainer />
           <MessageForm activeChatroom={props.activeChatroom} />
         </>
         :
