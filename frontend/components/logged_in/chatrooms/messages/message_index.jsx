@@ -4,7 +4,9 @@ import MessageIndexItem from './message_index_item';
 const MessageIndex = (props) => (
   <>
     <section className='message-area'>
-      <MessageIndexItem />
+      {props.chatroomMessages.map(message => (
+        <MessageIndexItem key={message.id} message={message} />
+      ))}
     </section>
   </>
 )
