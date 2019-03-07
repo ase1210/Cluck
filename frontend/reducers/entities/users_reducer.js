@@ -1,5 +1,6 @@
 import {
   RECEIVE_USER,
+  RECEIVE_USERS,
 } from "../../actions/session_actions";
 import {
   merge
@@ -18,6 +19,8 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CHATROOMS:
       return merge({}, state, action.payload.users);
+    case RECEIVE_USERS:
+      return action.users;
     case RECEIVE_USER:
       return merge({}, state, action.payload.user);
     case RECEIVE_MESSAGE:

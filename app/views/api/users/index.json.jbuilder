@@ -1,5 +1,3 @@
-json.users do
-  @users.each do |user|
-    json.partial! "show", user: user
-  end
+@users.each do |user|
+  json.partial! "show", user: user
 end
