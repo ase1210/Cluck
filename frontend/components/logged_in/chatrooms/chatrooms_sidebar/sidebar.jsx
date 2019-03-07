@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
       cable = Cable.createConsumer('ws://localhost:3000/cable');
     } else {
-      cable = Cable.createConsumer('ws://cluck-cluck.herokuapp.com/cable');
+      cable = Cable.createConsumer('wss://cluck-cluck.herokuapp.com/cable');
     }
     this.chats = cable.subscriptions.create({
       channel: 'MessageChannel',
