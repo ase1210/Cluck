@@ -43,6 +43,9 @@ export const selectChatrooms = (state) => {
       }
     }
   });
+  channels.sort((a, b) => (a.name < b.name ? -1 : 1));
+  directMessages.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1));
+
   return {
     channels,
     directMessages,
