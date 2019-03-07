@@ -35,7 +35,7 @@ class DirectMessageForm extends React.Component {
             <input type="text" placeholder='Find or start a conversation' onChange={this.handleInput} />
           </div>
           <div className='presentational'></div>
-          <UsersIndexContainer />
+          <UsersIndexContainer search={this.state.search} />
         </div>
 
       </div>

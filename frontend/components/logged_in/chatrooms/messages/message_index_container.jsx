@@ -1,4 +1,4 @@
-import { selectChatroomMessages } from '../../../../selectors/messages_selector';
+import { selectChatroomMessages } from '../../../../selectors/messages_selectors';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import MessageIndex from './message_index';
