@@ -13,7 +13,12 @@ class Sidebar extends React.Component {
   }
 
   createSocket(id) {
-    let cable = Cable.createConsumer('ws://localhost:3000/cable');
+    let cable;
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+      cable = Cable.createConsumer('ws://localhost:3000/cable');
+    } else {
+      cable = Cable.createConsumer('ws://cluck-cluck.herokuapp.com/cable');
+    }
     this.chats = cable.subscriptions.create({
       channel: 'MessageChannel',
       room: id,
