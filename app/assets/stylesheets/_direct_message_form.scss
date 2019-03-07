@@ -1,4 +1,4 @@
-.jcf-parent {
+.dmf-parent {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
   position: absolute;
 
 
-  .join-channel-form {
+  .direct-message-form {
     padding: 0 32px;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
     max-width: 640px;
     width: 100vw;
 
-    .jcf-title {
+    .dmf-title {
       display: flex;
       justify-content: space-between;
       margin-bottom: 32px;
@@ -55,7 +55,7 @@
       height: 50px;
     }
 
-    .jcf-search {
+    .dmf-search {
       height: 40px;
       width: 100%;
       border: 1px solid #868686;
@@ -76,7 +76,7 @@
       }
     }
 
-    .jcf-no-match {
+    .dmf-no-match {
       display: flex;
       justify-content: center;
       height: 100px;
@@ -86,7 +86,7 @@
 
     }
 
-    .jcf-channel-browser-container {
+    .dmf-user-browser-container {
       overflow-y: scroll;
       display: flex;
       flex-direction: column;
@@ -96,52 +96,42 @@
       font-size: 18px;
       line-height: 24px;
 
-      .jcf-cbc-section-head {
-        background-color: #f8f8f8;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        font-size: 14px;
-        color: #616061;
-        font-weight: 700;
-        padding: 4px 0 4px 12px;
-        width: 611px;
-        cursor: default;
-      }
-
-
-      .jcf-cbc-channel:hover {
+      .dmf-ubc-user:hover {
         background-color: #E8F5FA;
         border: 1px solid #C7E5F4;
         border-radius: 4px;
       }
 
-      .jcf-cbc-channel {
+      .dmf-ubc-user {
+        display: flex;
         border: 1px solid transparent;
         border-top: 1px solid rgb(221, 221, 221);
         font-size: 15px;
         line-height: 22px;
-        padding: 11px 80px 15px 11px;
-        width: 611px;
+        padding: 11px 48px 15px 11px;
+        width: 572px;
+        min-height: 64px;
         cursor: pointer;
+        box-sizing: border-box;
 
-        .jcf-cbc-channel-name {
-          color: #1d1c1d;
+        .dmf-ubc-user-image {
           overflow: hidden;
-          font-weight: 700;
-          width: 518px;
-          height: 29px;
-          text-size-adjust: 100%;
+          width: 36px;
+          height: 36px;
+          padding: 14px 0;
 
         }
 
-        .jcf-cbc-channel-info {
+        .dmf-ubc-user-info {
+          text-size-adjust: 100%;
+          color: #1d1c1d;
+          font-weight: 700;
           text-overflow: ellipsis;
           overflow: hidden;
-          font-size: 13px;
-          line-height: 18px;
-          color: #616061;
-          width: 518px;
-          height: 18px;
+          font-size: 15px;
+          padding: 10px 0px 10px 12px;
+          line-height: 22px;
+          width: 482px;
 
         }
       }
