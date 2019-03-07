@@ -28,7 +28,7 @@ class MessageForm extends React.Component {
   render() {
     return (
       <>
-        <form className='message-form' id='message-form' onSubmit={this.handleSubmit}>
+        <form className='message-form' onSubmit={this.handleSubmit}>
           <input type='text'
             placeholder={`Message #${this.props.activeChatroom.name}`}
             onChange={this.handleInput} value={this.state.body} />

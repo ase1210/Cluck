@@ -14,6 +14,8 @@ export const selectChannels = (state, str) => {
       available.push(channel);
     }
   });
+  subscribed.sort((a, b) => (a.name < b.name ? -1 : 1));
+  available.sort((a, b) => (a.name < b.name ? -1 : 1));
   return {
     subscribed,
     available

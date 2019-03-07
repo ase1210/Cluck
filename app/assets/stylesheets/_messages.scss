@@ -22,12 +22,12 @@
   .message-area {
     display: flex;
     flex-direction: column-reverse;
-    overflow: scroll;
+    overflow-y: scroll;
 
     .message-data {
       display: grid;
       grid-template-columns: 70px 1fr;
-      padding: 6px 0;
+      padding: 6px 20px 6px 0;
 
       .message-image {
         display: flex;
@@ -71,6 +71,9 @@
           line-height: 22px;
           overflow-wrap: break-word;
           text-align: left;
+          word-wrap: break-word;
+          word-break: break-all;
+          box-sizing: border-box;
         }
       }
     }
@@ -81,7 +84,7 @@
   .message-form {
     display: grid;
     grid-template-columns: 19px 1fr 20px;
-    grid-template-rows: 15px 44px 22px;
+    grid-template-rows: 15px 1fr 22px;
 
     input {
       grid-column: 2;
@@ -89,6 +92,14 @@
       padding-left: 20px;
       border: 2px solid #aaaaaa;
       border-radius: 8px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-all;
+      box-sizing: border-box;
+    }
+
+    input::placeholder {
+      color: #9a9a9a;
     }
 
     button {
@@ -98,7 +109,4 @@
     }
   }
 
-  input::placeholder {
-    color: #9a9a9a;
-  }
 }
