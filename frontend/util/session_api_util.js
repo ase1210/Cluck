@@ -1,3 +1,11 @@
+export const getAllUsers = () => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/users`,
+    dataType: 'json',
+  })
+);
+
 export const postUser = (user) => (
   $.ajax({
     method: 'POST',
