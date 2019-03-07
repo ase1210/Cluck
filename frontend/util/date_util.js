@@ -50,6 +50,6 @@ export const formatDateTime = date => {
     'rd' : 'th';
   const monthDay = (today.toDateString() === obj.toDateString()) ?
     "Today at" : (yesterday.toDateString() === obj.toDateString()) ?
-    "Yesterday at" : `${month} ${day}${suffix}`;
+    "Yesterday at" : `${month} ${day}${suffix} at`;
   return `${monthDay} ${formatTime(date)}`;
 };
