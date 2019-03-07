@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: redis://redistogo:17712a7df0aa09b70a485c4cdc48282e@dory.redistogo.com:10012/
   channel_prefix: CluckApp_production
