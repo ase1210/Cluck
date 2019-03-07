@@ -17,7 +17,7 @@ const messagesReducer = (state = {}, action) => {
       return action.payload.messages;
     case RECEIVE_MESSAGE:
       newState = merge({}, state);
-      newState[action.message.id] = action.message;
+      newState[action.payload.message.id] = action.payload.message;
       return newState;
     case REMOVE_MESSAGE:
       newState = merge({}, state);

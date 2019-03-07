@@ -23,7 +23,9 @@ end
 json.messages do
   @subscribed_chatrooms.each do |subscribed_chatroom|
     subscribed_chatroom.messages.each do |message|
-      json.partial! "/api/messages/show", message: message
+      json.set! message.id do
+        json.partial! "/api/messages/show", message: message
+      end
     end
   end
 end

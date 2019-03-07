@@ -8,12 +8,19 @@ class Api::MessagesController < ApplicationController
       ActionCable
         .server
         .broadcast("room-#{@message.chatroom_id}:messages",
-                   id: @message.id,
-                   body: @message.body,
-                   authorId: @message.author_id,
-                   chatroomId: @message.chatroom_id,
-                   createdAt: @message.created_at)
-      render :show
+                   message: {
+                     id: @message.id,
+                     body: @message.body,
+                     authorId: @message.author_id,
+                     chatroomId: @message.chatroom_id,
+                     createdAt: @message.created_at,
+                   },
+                   user: {
+                     id: current_user.id,
+                     username: current_user.username,
+                     avatarURL: "https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=100",
+                   })
+      # render :show
     else
       render json: @message.errors.full_messages, status: 422
     end

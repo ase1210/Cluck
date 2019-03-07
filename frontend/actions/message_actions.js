@@ -5,9 +5,9 @@ export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
 export const RECEIVE_MESSAGE_ERRORS = "RECEIVE_MESSAGE_ERRORS";
 
 
-export const receiveMessage = (message) => ({
+export const receiveMessage = (payload) => ({
   type: RECEIVE_MESSAGE,
-  message
+  payload
 });
 
 const removeMessage = (id) => ({
