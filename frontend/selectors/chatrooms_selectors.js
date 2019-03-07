@@ -59,13 +59,10 @@ export const selectUserChatroomIds = (state) => {
     .map(chatroomUser => chatroomUser.chatroomId);
   return userChatroomIds;
 };
-
-// export const selectChatroomUserJoinsId = (state) => {
-//   const currentUser = parseInt(state.session.currentUser);
-
-//   let userChatrooms = Object.values(state.entities.chatroomUsers)
-//     .filter(chatroomUser => chatroomUser.userId === currentUser);
-//   return {
-//     userChatrooms
-//   };
-// };
+export const selectSubscribedUserChatroomIds = (state) => {
+  const currentUser = parseInt(state.session.currentUser);
+  let userChatroomIds = Object.values(state.entities.chatroomUsers)
+    .filter(chatroomUser => chatroomUser.userId === currentUser && ["active", "invited", 'viewing'].includes(chatroomUser.status))
+    .map(chatroomUser => chatroomUser.chatroomId);
+  return userChatroomIds;
+};

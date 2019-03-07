@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../../../navbar/navbar_container';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Cable from 'actioncable';
 
 class Sidebar extends React.Component {
@@ -33,15 +33,14 @@ class Sidebar extends React.Component {
   }
 
   subscribeAllChatrooms() {
-    this.props.chatroomIds.forEach((id) =>
+    this.props.userChatroomIds.forEach((id) =>
       this.createSocket(id));
   }
 
   componentDidMount() {
-    this.props.fetchChatrooms().then(() =>
-      this.subscribeAllChatrooms()
-    ).then(
-      this.redirectToGeneral);
+    this.props.fetchChatrooms()
+      .then(() => this.subscribeAllChatrooms())
+      .then(this.redirectToGeneral);
   }
 
   componentDidUpdate(prevProps) {
