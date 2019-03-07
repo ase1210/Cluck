@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import DirectMessageForm from './direct_message_form';
-import { fetchAllUsers } from '../../../../actions/session_actions';
+import { fetchAllUsers } from '../../../../../actions/session_actions';
 
 const mDTP = (dispatch) => ({
   fetchAllUsers: () => dispatch(fetchAllUsers())
