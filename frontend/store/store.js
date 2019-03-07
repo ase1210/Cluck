@@ -10,7 +10,7 @@ import {
 
 const configureStore = (preloadedState = {}) => (
   process.env.NODE_ENV === 'production' ?
-  createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger)) :
+  createStore(rootReducer, preloadedState, applyMiddleware(thunk)) :
   createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger))
 
 );
