@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import UsersIndex from './users_index';
 
-const mSTP = (state) => {
+const mSTP = (state) => ({
 
-};
+});
 
 const mDTP = (dispatch) => ({
 });

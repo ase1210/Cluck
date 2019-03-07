@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import UserIndexItem from './user_index_item';
 
 class UsersIndex extends React.Component {
   // constructor(props) {
@@ -37,10 +38,7 @@ class UsersIndex extends React.Component {
       <>
         <div className='dmf-user-browser-container'>
           <div className='dmf-ubc-user'>
-            <div className='dmf-ubc-user-image'>IMG</div>
-            <div className='dmf-ubc-user-info'>
-              <span>USERNAME</span>
-            </div>
+            <UserIndexItem />
           </div>
         </div>
       </>
