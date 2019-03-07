@@ -5,7 +5,7 @@ export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
 export const RECEIVE_MESSAGE_ERRORS = "RECEIVE_MESSAGE_ERRORS";
 
 
-const receiveMessage = (message) => ({
+export const receiveMessage = (message) => ({
   type: RECEIVE_MESSAGE,
   message
 });
@@ -21,10 +21,11 @@ const receiveMessageErrors = (errors) => ({
 });
 
 export const createMessage = (message) => dispatch => (
-  MessageAPIUtil.postNewMessage(message).then(
-    message => dispatch(receiveMessage(message)),
-    errors => dispatch(receiveMessageErrors(errors))
-  )
+  MessageAPIUtil.postNewMessage(message)
+  // .then(
+  //   message => dispatch(receiveMessage(message)),
+  //   errors => dispatch(receiveMessageErrors(errors))
+  // )
 );
 
 export const destroyMessage = (id) => dispatch => (

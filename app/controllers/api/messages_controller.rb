@@ -5,6 +5,14 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
+      ActionCable
+        .server
+        .broadcast("room-#{@message.chatroom_id}:messages",
+                   id: @message.id,
+                   body: @message.body,
+                   authorId: @message.author_id,
+                   chatroomId: @message.chatroom_id,
+                   createdAt: @message.created_at)
       render :show
     else
       render json: @message.errors.full_messages, status: 422

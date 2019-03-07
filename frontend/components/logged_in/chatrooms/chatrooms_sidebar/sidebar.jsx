@@ -1,16 +1,41 @@
 import React from 'react';
 import NavBarContainer from '../../../navbar/navbar_container';
 import { Link, withRouter } from 'react-router-dom';
+import Cable from 'actioncable';
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.redirectToGeneral = this.redirectToGeneral.bind(this);
     this.handleLeaveChatroom = this.handleLeaveChatroom.bind(this);
+    this.createSocket = this.createSocket.bind(this);
+    this.subscribeAllChatrooms = this.subscribeAllChatrooms.bind(this);
+  }
+
+  createSocket(id) {
+    let cable = Cable.createConsumer('ws://localhost:3000/cable');
+    this.chats = cable.subscriptions.create({
+      channel: 'MessageChannel',
+      room: id,
+    }, {
+        connected: () => { console.log("Connected!!"); },
+        disconnected: () => { console.log("Disconnected!!"); },
+        received: (data) => {
+          console.log(data);
+          this.props.receiveMessage(data);
+        }
+      });
+  }
+
+  subscribeAllChatrooms() {
+    this.props.chatroomIds.forEach((id) =>
+      this.createSocket(id));
   }
 
   componentDidMount() {
-    this.props.fetchChatrooms().then(
+    this.props.fetchChatrooms().then(() =>
+      this.subscribeAllChatrooms()
+    ).then(
       this.redirectToGeneral);
   }
 
