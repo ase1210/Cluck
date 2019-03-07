@@ -1,4 +1,5 @@
 import React from 'react';
+import UsersIndexContainer from '../users_index/users_index_container';
 
 class DirectMessageForm extends React.Component {
   constructor(props) {
@@ -34,14 +35,7 @@ class DirectMessageForm extends React.Component {
             <input type="text" placeholder='Find or start a conversation' onChange={this.handleInput} />
           </div>
           <div className='presentational'></div>
-          <div className='dmf-user-browser-container'>
-            <div className='dmf-ubc-user'>
-              <div className='dmf-ubc-user-image'>IMG</div>
-              <div className='dmf-ubc-user-info'>
-                <span>USERNAME</span>
-              </div>
-            </div>
-          </div>
+          <UsersIndexContainer />
         </div>
 
       </div>
