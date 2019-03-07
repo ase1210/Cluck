@@ -110,7 +110,7 @@ class Sidebar extends React.Component {
             <div className='presentational'></div>
             <div className='section-header' onClick={this.routeChange('new')}>+ Add a channel</div>
             <div className='presentational'></div>
-            <div className='section-header'>Direct Messages</div>
+            <div className='section-header' onClick={this.routeChange('dm')}>Direct Messages</div>
             {this.props.chatrooms.directMessages.map(directMessage => {
               let klass = (directMessage.id === parseInt(this.props.match.params.chatroomId)) ?
                 "selected" : "chatroom";
