@@ -34,7 +34,7 @@ class AddChannelForm extends React.Component {
   }
 
   handleInput(e) {
-    this.setState({ name: e.target.value });
+    this.setState({ name: e.target.value.toLowerCase() });
     if (this.props.chatroomErrors.length !== 0) {
       this.props.clearErrors()
     }
@@ -81,7 +81,9 @@ class AddChannelForm extends React.Component {
             <label>Name
               {this.props.chatroomErrors.length === 0 ? <></> : <ChatroomErrors chatroomErrors={this.props.chatroomErrors} />}
               <br />
-              <input type="text" placeholder='e.g. music' autoFocus onChange={this.handleInput} />
+              <input type="text" placeholder='e.g. music' autoFocus
+                value={this.state.name}
+                onChange={this.handleInput} />
               <p>Names must be lowercase, without spaces or periods, and shorter than 22 characters.</p>
             </label>
             <div className='buttons'>

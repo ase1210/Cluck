@@ -1,7 +1,7 @@
 export const selectChannels = (state, str) => {
   const currentUser = parseInt(state.session.currentUser);
   let channels = Object.values(state.entities.chatrooms)
-    .filter(chatroom => chatroom.channel && chatroom.name.startsWith(str));
+    .filter(chatroom => chatroom.channel && chatroom.name.startsWith(str.toLowerCase()));
   let userChatroomIds = Object.values(state.entities.chatroomUsers)
     .filter(chatroomUser => chatroomUser.userId === currentUser && ["active", "invited", 'viewing'].includes(chatroomUser.status))
     .map(chatroomUser => chatroomUser.chatroomId);
