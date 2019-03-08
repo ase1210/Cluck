@@ -1,6 +1,6 @@
 export const selectUsers = (state, str) => {
   let users = Object.values(state.entities.users).filter(user => keyInStr(user.username.toLowerCase(), str.toLowerCase()));
-  users.sort((a, b) => (a.username < b.username ? -1 : 1));
+  users.sort((a, b) => (a.username.toLowerCase() < b.username.toLowerCase() ? -1 : 1));
   return users;
 };
 
