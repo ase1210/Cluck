@@ -10,7 +10,8 @@ Live chat is enabled through the use of WebSockets.
 
 ## Setup
 Clone this repo to your desktop, and from the root directory, run `npm install` to install all the JS dependencies.  
-Check out the Gemfile to verify that your system is using the correct versions of Ruby and the other gems. Then run `bundle install` to install all of the Ruby dependencies.  
+Check out the Gemfile to verify that your system is using the correct versions of Ruby and the other gems.  
+Then run `bundle install` to install all of the Ruby dependencies.  
 Finally, to set up and seed the database, ensure you have Postgres running, and then run `bundle exex rails db:setup`
 
 ## Usage
@@ -40,3 +41,9 @@ Users have the ability to join, leave and create channels.
        * Users can create a channel by clicking on the Add Channel link.  
        * Channel names are limited to lowercase letters, numbers and a few special characters.  
        * Inputs are automatically adjusted to lowercase or rejected if it is not an acceptable character.
+
+
+### Future Features
+
+* Direct messaging
+* Group Direct messaging
