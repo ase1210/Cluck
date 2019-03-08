@@ -32,11 +32,11 @@ The challenge here was to ensure each user receives updates ONLY for their activ
 ### Channels
 Users have the ability to join, leave and create channels.  
   * Joining a channel  
-       When joining a channel, they can use the search bar to filter the channels list.
-       Simply click on a channel to join it. 
+       * When joining a channel, they can use the search bar to filter the channels list.
+       * Simply click on a channel to join it. 
   * Leaving a channel  
-       Simply click on the 'x' next to the channel name in the sidebar to leave the channel.
+       * Simply click on the 'x' next to the channel name in the sidebar to leave the channel.
   * Creating a channel  
-       Users can create a channel by clicking on the Add Channel link.  
-       Channel names are limited to lowercase letters, numbers and a few special characters.  
-       Inputs are automatically adjusted to lowercase or rejected if it is not an acceptable character.
+       * Users can create a channel by clicking on the Add Channel link.  
+       * Channel names are limited to lowercase letters, numbers and a few special characters.  
+       * Inputs are automatically adjusted to lowercase or rejected if it is not an acceptable character.
