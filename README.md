@@ -18,3 +18,25 @@ After you complete the setup, you can run `npm start` and `rails s` from the pro
 
 You can create your own user profile or use the Demo Login button to login as the demo user to explore Cluck's functionality.
 To see Live Chat in action, create or log into a profile in one window, and then use an incognito window to log into a second account. Send a message from one profile and see it appear in the other!
+
+## Features
+1. [Live Chat](#live-chat)
+2. [Channels](#channels)
+
+### Live Chat
+When a user logs in, Cluck will load all of their active chatrooms and create a unique websocket subscription for each chatroom. This allows users to receive updates when any other user sends a message to one of their active chatrooms. 
+
+The challenge here was to ensure each user receives updates ONLY for their active chatrooms. With a single websocket channel for all messages, any message to any chatroom would broadcast an update to every active user.  In order to limit the broadcast to just the specific chatroom that received the new message, I created "rooms" on the messages websocket channel, each representing a different chatroom. 
+
+
+### Channels
+Users have the ability to join, leave and create channels.  
+  * Joining a channel  
+       When joining a channel, they can use the search bar to filter the channels list.
+       Simply click on a channel to join it. 
+  * Leaving a channel  
+       Simply click on the 'x' next to the channel name in the sidebar to leave the channel.
+  * Creating a channel  
+       Users can create a channel by clicking on the Add Channel link.  
+       Channel names are limited to lowercase letters, numbers and a few special characters.  
+       Inputs are automatically adjusted to lowercase or rejected if it is not an acceptable character.
