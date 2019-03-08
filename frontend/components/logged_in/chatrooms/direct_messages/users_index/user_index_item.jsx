@@ -2,9 +2,9 @@ import React from 'react';
 
 const UserIndexItem = (props) => (
   <>
-    <div className='dmf-ubc-user-image'>IMG</div>
+    <img className='dmf-ubc-user-image' src={`${props.user.avatarURL}`} />
     <div className='dmf-ubc-user-info'>
-      <span>USERNAME</span>
+      <span>{props.user.username}</span>
     </div>
   </>
 )

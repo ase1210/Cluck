@@ -37,9 +37,11 @@ class UsersIndex extends React.Component {
     return (
       <>
         <div className='dmf-user-browser-container'>
-          <div className='dmf-ubc-user'>
-            <UserIndexItem />
-          </div>
+          {this.props.users.map(user =>
+            <div className='dmf-ubc-user'>
+              <UserIndexItem user={user} />
+            </div>
+          )}
         </div>
       </>
     )
