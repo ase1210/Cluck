@@ -91,7 +91,7 @@ class AddChannelForm extends React.Component {
               <input type="text" placeholder='e.g. music' autoFocus
                 value={this.state.name}
                 onChange={this.handleInput} />
-              <p>Names must be lowercase, without spaces or periods, and shorter than 22 characters.</p>
+              <p>Names must be lowercase, without spaces or most punctuation, and shorter than 22 characters.</p>
             </label>
             <div className='buttons'>
 
