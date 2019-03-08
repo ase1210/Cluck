@@ -23,8 +23,12 @@ class Sidebar extends React.Component {
       channel: 'MessageChannel',
       room: id,
     }, {
-        connected: () => { console.log("Connected!!"); },
-        disconnected: () => { console.log("Disconnected!!"); },
+        connected: () => {
+          // console.log("Connected!!"); 
+        },
+        disconnected: () => {
+          // console.log("Disconnected!!"); 
+        },
         received: (data) => {
           console.log(data);
           this.props.receiveMessage(data);
@@ -98,7 +102,7 @@ class Sidebar extends React.Component {
               return (
                 <div className={`${klass}`} key={channel.id} >
                   <Link to={`/messages/${channel.id}`}>
-                    <p># {channel.name}</p>
+                    <p>#{channel.name}</p>
                   </Link>
                   {
                     (this.props.chatrooms.generalChatroomId === channel.id)

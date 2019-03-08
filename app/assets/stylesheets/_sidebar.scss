@@ -78,15 +78,24 @@
 
       .chatroom,
       .selected {
-        min-height: 26px;
+        height: 26px;
         padding-left: 20px;
         padding-right: 12px;
         font-size: 15px;
         display: flex;
         justify-content: space-between;
 
-        p {
-          width: 154px;
+        a {
+          height: 26px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+
+          p {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 154px;
+          }
+
         }
 
         .leave-chatroom {
