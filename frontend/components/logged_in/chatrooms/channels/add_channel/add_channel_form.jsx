@@ -39,7 +39,7 @@ class AddChannelForm extends React.Component {
     if (!acceptedChars.includes(value) || e.target.value.length > 21) {
       value = this.state.name
     } else {
-      value = e.target.value.toLowerCase().replace(' ', "")
+      value = e.target.value.toLowerCase()
     }
     this.setState({ name: value });
     if (this.props.chatroomErrors.length !== 0) {
