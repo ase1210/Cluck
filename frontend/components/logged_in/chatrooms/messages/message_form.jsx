@@ -40,3 +40,8 @@ class MessageForm extends React.Component {
 }
 
 export default MessageForm;
+
+
+{/* <textarea autoFocus
+  placeholder={`Message #${this.props.activeChatroom.name}`}
+  onChange={this.handleInput} value={this.state.body} ></textarea> */}

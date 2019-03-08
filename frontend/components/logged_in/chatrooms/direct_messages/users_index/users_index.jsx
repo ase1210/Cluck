@@ -39,7 +39,7 @@ class UsersIndex extends React.Component {
         <div className='dmf-user-browser-container'>
           {this.props.users.map(user =>
             <div className='dmf-ubc-user'>
-              <UserIndexItem user={user} />
+              <UserIndexItem key={user.id} user={user} />
             </div>
           )}
         </div>
