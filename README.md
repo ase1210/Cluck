@@ -3,6 +3,7 @@
 [Cluck live](https://cluck-cluck.herokuapp.com/#/)
 
 Cluck is a messaging app clone of Slack.  
+You can cluck in real time with other users, and create, join and leave channels.  
 The backend is powered by Ruby on Rails while the frontend is built with React/Redux.  
 Live chat is enabled through the use of WebSockets.
 
