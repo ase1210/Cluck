@@ -23,8 +23,10 @@ class DirectMessageForm extends React.Component {
     this.props.history.push(path);
   }
 
-  removeSelectedUser() {
-    console.log("remove");
+  removeSelectedUser(id) {
+    return e => {
+      this.props.removeUserSelection(id);
+    };
   }
 
   handleCreateDM() {
@@ -40,7 +42,7 @@ class DirectMessageForm extends React.Component {
               <div
                 className="dmf-selected-user"
                 key={user.id}
-                onClick={this.removeSelectedUser}
+                onClick={this.removeSelectedUser(user.id)}
               >
                 <img src={`${user.avatarURL}`} />
                 <div>
