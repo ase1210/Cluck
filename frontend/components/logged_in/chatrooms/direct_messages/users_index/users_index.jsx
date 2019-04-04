@@ -1,6 +1,6 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import UserIndexItem from './user_index_item';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import UserIndexItem from "./user_index_item";
 
 class UsersIndex extends React.Component {
   // constructor(props) {
@@ -33,20 +33,29 @@ class UsersIndex extends React.Component {
   //   };
   // }
 
+  addSelectedUser(user) {
+    return e => {
+      this.props.receiveUserSelection(user);
+    };
+  }
+
   render() {
     return (
       <>
-        <div className='dmf-user-browser-container'>
-          {this.props.users.map(user =>
-            <div className='dmf-ubc-user' key={user.id}>
+        <div className="dmf-user-browser-container">
+          {this.props.users.map(user => (
+            <div
+              className="dmf-ubc-user"
+              key={user.id}
+              onClick={this.addSelectedUser(user)}
+            >
               <UserIndexItem user={user} />
             </div>
-          )}
+          ))}
         </div>
       </>
-    )
+    );
   }
 }
-
 
 export default withRouter(UsersIndex);
