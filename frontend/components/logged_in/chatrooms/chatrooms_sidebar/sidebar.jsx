@@ -1,7 +1,7 @@
-import React from 'react';
-import NavBarContainer from '../../../navbar/navbar_container';
-import { Link } from 'react-router-dom';
-import Cable from 'actioncable';
+import React from "react";
+import NavBarContainer from "../../../navbar/navbar_container";
+import { Link } from "react-router-dom";
+import Cable from "actioncable";
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -14,41 +14,46 @@ class Sidebar extends React.Component {
 
   createSocket(id) {
     let cable;
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-      cable = Cable.createConsumer('ws://localhost:3000/cable');
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+      cable = Cable.createConsumer("ws://localhost:3000/cable");
     } else {
-      cable = Cable.createConsumer('wss://cluck-cluck.herokuapp.com/cable');
+      cable = Cable.createConsumer("wss://cluck-cluck.herokuapp.com/cable");
     }
-    this.chats = cable.subscriptions.create({
-      channel: 'MessageChannel',
-      room: id,
-    }, {
+    this.chats = cable.subscriptions.create(
+      {
+        channel: "MessageChannel",
+        room: id
+      },
+      {
         connected: () => {
-          // console.log("Connected!!"); 
+          console.log(`Connected!! to ${id}`);
         },
         disconnected: () => {
-          // console.log("Disconnected!!"); 
+          console.log(`Disconnected!! from ${id}`);
         },
-        received: (data) => {
+        received: data => {
           console.log(data);
           this.props.receiveMessage(data);
         }
-      });
+      }
+    );
   }
 
   subscribeAllChatrooms() {
-    this.props.userChatroomIds.forEach((id) =>
-      this.createSocket(id));
+    this.props.userChatroomIds.forEach(id => this.createSocket(id));
   }
 
   componentDidMount() {
-    this.props.fetchChatrooms()
+    this.props
+      .fetchChatrooms()
       .then(() => this.subscribeAllChatrooms())
       .then(this.redirectToGeneral);
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.match.params.chatroomId !== this.props.match.params.chatroomId) {
+    if (
+      prevProps.match.params.chatroomId !== this.props.match.params.chatroomId
+    ) {
       this.redirectToGeneral();
     }
   }
@@ -71,7 +76,7 @@ class Sidebar extends React.Component {
     let chatroomUser = {
       user_id: this.props.currentUser,
       chatroom_id: id,
-      status: 'inactive'
+      status: "inactive"
     };
     return () => {
       this.props.updateChatroomUser(chatroomUser);
@@ -84,56 +89,78 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <div className='sidebar-parent'>
-        <div className='sidebar-nav'>
-          <div className='app-title'>Cluck</div>
+      <div className="sidebar-parent">
+        <div className="sidebar-nav">
+          <div className="app-title">Cluck</div>
           <div>
             <NavBarContainer />
           </div>
         </div>
-        <div className='presentational'></div>
-        <div className='sidebar'>
-          <div className='sidebar-data'>
-            <div className='presentational'></div>
-            <div className='section-header' onClick={this.routeChange('join')}>Channels</div>
+        <div className="presentational" />
+        <div className="sidebar">
+          <div className="sidebar-data">
+            <div className="presentational" />
+            <div className="section-header" onClick={this.routeChange("join")}>
+              Channels
+            </div>
             {this.props.chatrooms.channels.map(channel => {
-              let klass = (channel.id === parseInt(this.props.match.params.chatroomId)) ?
-                "selected" : "chatroom";
+              let klass =
+                channel.id === parseInt(this.props.match.params.chatroomId)
+                  ? "selected"
+                  : "chatroom";
               return (
-                <div className={`${klass}`} key={channel.id} >
+                <div className={`${klass}`} key={channel.id}>
                   <Link to={`/messages/${channel.id}`}>
                     <p>#{channel.name}</p>
                   </Link>
-                  {
-                    (this.props.chatrooms.generalChatroomId === channel.id)
-                      ? <></> :
-                      <span className='leave-chatroom' onClick={this.handleLeaveChatroom(channel.id)}>x</span>
-                  }
-                </div>)
+                  {this.props.chatrooms.generalChatroomId === channel.id ? (
+                    <></>
+                  ) : (
+                    <span
+                      className="leave-chatroom"
+                      onClick={this.handleLeaveChatroom(channel.id)}
+                    >
+                      x
+                    </span>
+                  )}
+                </div>
+              );
             })}
-            <div className='presentational'></div>
-            <div className='section-header' onClick={this.routeChange('new')}>+ Add a channel</div>
-            <div className='presentational'></div>
-            <div className='section-header' onClick={this.routeChange('dm')}>Direct Messages</div>
+            <div className="presentational" />
+            <div className="section-header" onClick={this.routeChange("new")}>
+              + Add a channel
+            </div>
+            <div className="presentational" />
+            <div className="section-header" onClick={this.routeChange("dm")}>
+              Direct Messages
+            </div>
             {this.props.chatrooms.directMessages.map(directMessage => {
-              let klass = (directMessage.id === parseInt(this.props.match.params.chatroomId)) ?
-                "selected" : "chatroom";
+              let klass =
+                directMessage.id ===
+                parseInt(this.props.match.params.chatroomId)
+                  ? "selected"
+                  : "chatroom";
               return (
-                <div className={`${klass}`} key={directMessage.id} >
+                <div className={`${klass}`} key={directMessage.id}>
                   <Link to={`/messages/${directMessage.id}`}>
                     <p># {directMessage.name}</p>
                   </Link>
-                  <span className='leave-chatroom' onClick={this.handleLeaveChatroom(directMessage.id)}>x</span>
-
-                </div>)
+                  <span
+                    className="leave-chatroom"
+                    onClick={this.handleLeaveChatroom(directMessage.id)}
+                  >
+                    x
+                  </span>
+                </div>
+              );
             })}
-            <div className='presentational'></div>
-            <div className='presentational'></div>
-            <div className='presentational'></div>
+            <div className="presentational" />
+            <div className="presentational" />
+            <div className="presentational" />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
