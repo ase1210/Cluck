@@ -23,13 +23,21 @@ class DirectMessageForm extends React.Component {
     this.props.history.push(path);
   }
 
+  removeSelectedUser() {}
+
+  handleCreateDM() {}
+
   selectedUsers() {
     return (
       <>
         <div className="dmf-search">
           {this.props.selectedUsers.map(user => {
             return (
-              <div className="dmf-selected-user" key={user.id}>
+              <div
+                className="dmf-selected-user"
+                key={user.id}
+                onClick={this.removeSelectedUser}
+              >
                 <img src={`${user.avatarURL}`} />
                 <div>
                   <span>{user.username}</span>
@@ -40,8 +48,9 @@ class DirectMessageForm extends React.Component {
           })}
           <input type="text" autoFocus onChange={this.handleInput} />
         </div>
-        {/* onclick only for the live button, no onclick for the other */}
-        <div className="dmf-button">Start</div>
+        <div className="dmf-button" onClick={this.handleCreateDM}>
+          Start
+        </div>
       </>
     );
   }
