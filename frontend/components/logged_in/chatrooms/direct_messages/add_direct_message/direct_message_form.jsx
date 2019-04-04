@@ -57,8 +57,8 @@ class DirectMessageForm extends React.Component {
                 onChange={this.handleInput}
               />
             </div>
-            {/* <button className="no-users">Start</button> */}
-            <button>Start</button>
+            {/* <div className="dmf-button no-users">Start</div> */}
+            <div className="dmf-button">Start</div>
           </div>
           <div className="presentational" />
           <UsersIndexContainer search={this.state.search} />
