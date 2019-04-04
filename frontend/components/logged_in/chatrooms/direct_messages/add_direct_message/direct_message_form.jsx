@@ -23,9 +23,13 @@ class DirectMessageForm extends React.Component {
     this.props.history.push(path);
   }
 
-  removeSelectedUser() {}
+  removeSelectedUser() {
+    console.log("remove");
+  }
 
-  handleCreateDM() {}
+  handleCreateDM() {
+    console.log("create");
+  }
 
   selectedUsers() {
     return (
