@@ -1,5 +1,5 @@
-import React from 'react';
-import UsersIndexContainer from '../users_index/users_index_container';
+import React from "react";
+import UsersIndexContainer from "../users_index/users_index_container";
 
 class DirectMessageForm extends React.Component {
   constructor(props) {
@@ -25,21 +25,45 @@ class DirectMessageForm extends React.Component {
 
   render() {
     return (
-      <div className='dmf-parent'>
-        <div className='direct-message-form'>
-          <div className='dmf-title'>
+      <div className="dmf-parent">
+        <div className="direct-message-form">
+          <div className="dmf-title">
             <h1>Direct Messages</h1>
-            <div className='escape-form' onClick={this.handleEscape}>x</div>
+            <div className="escape-form" onClick={this.handleEscape}>
+              x
+            </div>
           </div>
-          <div className='dmf-search'>
-            <input type="text" placeholder='Find or start a conversation' onChange={this.handleInput} />
+          <div className="dmf-search-parent">
+            <div className="dmf-search">
+              <div className="dmf-selected-user">
+                <img src="https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=100" />
+                <div>
+                  <span>Mike </span>
+                  <span className="x">x</span>
+                </div>
+              </div>
+              <div className="dmf-selected-user">
+                <img src="https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=100" />
+                <div>
+                  <span>Drew</span>
+                  <span className="x">x</span>
+                </div>
+              </div>
+              {/* NEED TO ADD LIST OF SELECTED USERS HERE -- if no selected users, then div with placeholder, else */}
+              <input
+                type="text"
+                autoFocus
+                placeholder="Find or start a conversation"
+                onChange={this.handleInput}
+              />
+            </div>
+            <button>START</button>
           </div>
-          <div className='presentational'></div>
+          <div className="presentational" />
           <UsersIndexContainer search={this.state.search} />
         </div>
-
       </div>
-    )
+    );
   }
 }
 
