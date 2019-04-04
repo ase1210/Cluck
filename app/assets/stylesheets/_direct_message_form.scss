@@ -4,9 +4,8 @@
   display: flex;
   box-sizing: border-box;
   justify-content: center;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   position: absolute;
-
 
   .direct-message-form {
     padding: 0 32px;
@@ -29,7 +28,6 @@
         font-size: 34px;
         font-weight: 800;
         cursor: default;
-
       }
 
       .escape-form {
@@ -45,30 +43,72 @@
       }
 
       .escape-form:hover {
-        background-color: #DDDDDD;
+        background-color: #dddddd;
       }
-
-
     }
 
     .presentational {
       height: 50px;
     }
 
+    .dmf-search-parent {
+      display: flex;
+
+      button {
+        border: 1px solid rgb(29, 28, 29);
+        text-align: center;
+        padding: 10px;
+        height: 48px;
+        width: 15%;
+        border-radius: 4px;
+        margin-left: 10px;
+        border: 0px solid auto;
+        background-color: rgb(0, 122, 90);
+        color: #fff;
+      }
+    }
     .dmf-search {
-      height: 40px;
-      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+      width: 85%;
       border: 1px solid #868686;
       border-radius: 4px;
       cursor: text;
       margin-bottom: 8px;
 
-      input {
-        height: 40px;
+      .dmf-selected-user {
+        display: flex;
+        border: 1px solid black;
+        border-radius: 4px;
+        height: 30px;
         font-size: 16px;
         line-height: 24px;
-        width: 100%;
-        padding: 10.4px 12px 8.8px 40px;
+        padding-right: 5px;
+        margin: 8px 5px;
+        color: white;
+        background-color: #1d9bd1;
+        cursor: pointer;
+
+        img {
+          overflow: hidden;
+          width: 30px;
+          height: 30px;
+          margin-right: 5px;
+        }
+
+        .x {
+          justify-self: flex-end;
+          padding-left: 10px;
+        }
+      }
+      input {
+        height: 30px;
+        width: 50%;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 8px 5px;
+        padding-left: 12px;
       }
 
       input::placeholder {
@@ -83,7 +123,6 @@
       line-height: 24px;
       font-size: 18px;
       align-items: center;
-
     }
 
     .dmf-user-browser-container {
@@ -97,8 +136,8 @@
       line-height: 24px;
 
       .dmf-ubc-user:hover {
-        background-color: #E8F5FA;
-        border: 1px solid #C7E5F4;
+        background-color: #e8f5fa;
+        border: 1px solid #c7e5f4;
         border-radius: 4px;
       }
 
@@ -118,7 +157,6 @@
           overflow: hidden;
           width: 36px;
           height: 36px;
-
         }
 
         .dmf-ubc-user-info {
@@ -131,11 +169,8 @@
           padding: 10px 0px 10px 12px;
           line-height: 22px;
           width: 482px;
-
         }
       }
-
     }
-
   }
 }
