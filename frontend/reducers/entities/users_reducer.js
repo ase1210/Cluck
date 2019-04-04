@@ -1,17 +1,7 @@
-import {
-  RECEIVE_USER,
-  RECEIVE_USERS,
-} from "../../actions/session_actions";
-import {
-  merge
-} from 'lodash';
-import {
-  RECEIVE_CHATROOMS
-} from "../../actions/chatroom_actions";
-import {
-  RECEIVE_MESSAGE
-} from "../../actions/message_actions";
-
+import { RECEIVE_USER, RECEIVE_USERS } from "../../actions/session_actions";
+import { merge } from "lodash";
+import { RECEIVE_CHATROOMS } from "../../actions/chatroom_actions";
+import { RECEIVE_MESSAGE } from "../../actions/message_actions";
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -30,6 +20,6 @@ const usersReducer = (state = {}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default usersReducer;
