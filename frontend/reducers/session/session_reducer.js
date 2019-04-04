@@ -2,8 +2,7 @@ import { RECEIVE_USER, LOGOUT_USER } from "../../actions/session_actions";
 import { merge } from "lodash";
 
 const defaultState = {
-  currentUser: null,
-  selectedUsers: []
+  currentUser: null
 };
 
 const sessionReducer = (state = defaultState, action) => {
