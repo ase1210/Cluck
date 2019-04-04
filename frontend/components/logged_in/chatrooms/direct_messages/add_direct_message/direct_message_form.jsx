@@ -23,6 +23,45 @@ class DirectMessageForm extends React.Component {
     this.props.history.push(path);
   }
 
+  selectedUsers() {
+    return (
+      <>
+        <div className="dmf-search">
+          {this.props.selectedUsers.map(user => {
+            return (
+              <div className="dmf-selected-user" key={user.id}>
+                <img src={`${user.avatarURL}`} />
+                <div>
+                  <span>{user.username}</span>
+                  <span className="x">x</span>
+                </div>
+              </div>
+            );
+          })}
+          <input type="text" autoFocus onChange={this.handleInput} />
+        </div>
+        {/* onclick only for the live button, no onclick for the other */}
+        <div className="dmf-button">Start</div>
+      </>
+    );
+  }
+
+  noUsers() {
+    return (
+      <>
+        <div className="dmf-search">
+          <input
+            type="text"
+            autoFocus
+            placeholder="Find or start a conversation"
+            onChange={this.handleInput}
+          />
+        </div>
+        <div className="dmf-button no-users">Start</div>
+      </>
+    );
+  }
+
   render() {
     return (
       <div className="dmf-parent">
@@ -34,31 +73,9 @@ class DirectMessageForm extends React.Component {
             </div>
           </div>
           <div className="dmf-search-parent">
-            <div className="dmf-search">
-              <div className="dmf-selected-user">
-                <img src="https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=100" />
-                <div>
-                  <span>Mike </span>
-                  <span className="x">x</span>
-                </div>
-              </div>
-              <div className="dmf-selected-user">
-                <img src="https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=100" />
-                <div>
-                  <span>Drew</span>
-                  <span className="x">x</span>
-                </div>
-              </div>
-              {/* NEED TO ADD LIST OF SELECTED USERS HERE -- if no selected users, then div with placeholder, else */}
-              <input
-                type="text"
-                autoFocus
-                placeholder="Find or start a conversation"
-                onChange={this.handleInput}
-              />
-            </div>
-            {/* <div className="dmf-button no-users">Start</div> */}
-            <div className="dmf-button">Start</div>
+            {this.props.selectedUsers.length > 0
+              ? this.selectedUsers()
+              : this.noUsers()}
           </div>
           <div className="presentational" />
           <UsersIndexContainer search={this.state.search} />
