@@ -25,9 +25,34 @@ class DirectMessageForm extends React.Component {
     this.props.history.push(path);
   }
 
+  createChatroomInfo() {
+    let user_ids = [this.props.currentUser.id];
+    let users = [this.props.currentUser.username];
+
+    this.props.selectedUsers.forEach(user => {
+      users.push(user.username);
+      user_ids.push(user.id);
+    });
+    users.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
+    console.log(users);
+    console.log(user_ids);
+    let name = users.join(", ");
+    return { name, user_ids };
+  }
+
   handleCreateDM() {
     if (this.props.selectedUsers.length > 0) {
-      console.log("create");
+      let { name, user_ids } = this.createChatroomInfo();
+      let chatroom = {
+        name,
+        user_ids,
+        channel: false,
+        admin_id: this.props.currentUser.id
+      };
+      this.props.createDMChatroom(chatroom).then(action => {
+        let id = Object.keys(action.payload.chatroom)[0];
+        // this.props.history.push(`/messages/${id}`);
+      });
     }
   }
 
