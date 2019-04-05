@@ -1,6 +1,12 @@
 export const selectUsers = (state, str) => {
-  let users = Object.values(state.entities.users).filter(user => keyInStr(user.username.toLowerCase(), str.toLowerCase()));
-  users.sort((a, b) => (a.username.toLowerCase() < b.username.toLowerCase() ? -1 : 1));
+  let users = Object.values(state.entities.users).filter(
+    user =>
+      user.id !== parseInt(state.session.currentUser) &&
+      keyInStr(user.username.toLowerCase(), str.toLowerCase())
+  );
+  users.sort((a, b) =>
+    a.username.toLowerCase() < b.username.toLowerCase() ? -1 : 1
+  );
   return users;
 };
 
