@@ -20,6 +20,24 @@ class Api::ChatroomsController < ApplicationController
     render json: ["At least one of those users no longer exists"], status: 422
   end
 
+  def dmcreate
+    @chatroom = Chatroom.find_by(name: params[:chatroom][:name])
+
+    if @chatroom
+      @chatroom_user = @chatroom.chatroom_users.where("user_id: = ?", current_user.id).first
+      @chatroom_user.update_attributes(status: "active")
+      render :show
+    else
+      @chatroom = Chatroom.new(chatroom_params)
+
+      if @chatroom.save
+        render :show
+      else
+        render json: @chatroom.errors.full_messages, status: 422
+      end
+    end
+  end
+
   private
 
   def chatroom_params
