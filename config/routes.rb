@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:create, :destroy]
   end
 
+  post "/api/dm", to: "api/chatrooms#dmcreate"
+
   root to: "static_pages#root"
 end
