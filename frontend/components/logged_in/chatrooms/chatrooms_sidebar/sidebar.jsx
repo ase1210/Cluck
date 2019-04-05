@@ -40,6 +40,7 @@ class Sidebar extends React.Component {
   }
 
   subscribeAllChatrooms() {
+    this.createSocket(-1);
     this.props.userChatroomIds.forEach(id => this.createSocket(id));
   }
 
