@@ -52,7 +52,12 @@ class DirectMessageForm extends React.Component {
               </div>
             );
           })}
-          <input type="text" autoFocus onChange={this.handleInput} />
+          <input
+            type="text"
+            autoFocus
+            placeholder="Search users"
+            onChange={this.handleInput}
+          />
         </div>
         <div className="dmf-button" onClick={this.handleCreateDM}>
           Start
