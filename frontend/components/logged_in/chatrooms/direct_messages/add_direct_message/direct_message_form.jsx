@@ -8,6 +8,7 @@ class DirectMessageForm extends React.Component {
     this.state = { search: "" };
     this.handleInput = this.handleInput.bind(this);
     this.handleEscape = this.handleEscape.bind(this);
+    this.handleCreateDM = this.handleCreateDM.bind(this);
   }
 
   componentDidMount() {
@@ -24,60 +25,19 @@ class DirectMessageForm extends React.Component {
     this.props.history.push(path);
   }
 
-  removeSelectedUser(id) {
-    return e => {
-      this.props.removeUserSelection(id);
-    };
-  }
-
   handleCreateDM() {
-    console.log("create");
-  }
-
-  selectedUsers() {
-    return (
-      <>
-        <div className="dmf-search">
-          {this.props.selectedUsers.map(user => {
-            return (
-              <SelectedUserItem
-                user={user}
-                key={user.id}
-                removeUserSelection={this.props.removeUserSelection}
-              />
-            );
-          })}
-          <input
-            type="text"
-            autoFocus
-            placeholder="Search users"
-            onChange={this.handleInput}
-          />
-        </div>
-        <div className="dmf-button" onClick={this.handleCreateDM}>
-          Start
-        </div>
-      </>
-    );
-  }
-
-  noUsers() {
-    return (
-      <>
-        <div className="dmf-search">
-          <input
-            type="text"
-            autoFocus
-            placeholder="Find or start a conversation"
-            onChange={this.handleInput}
-          />
-        </div>
-        <div className="dmf-button no-users">Start</div>
-      </>
-    );
+    if (this.props.selectedUsers.length > 0) {
+      console.log("create");
+    }
   }
 
   render() {
+    let placeholderText = "Find or start a conversation";
+    let buttonClass = "dmf-button no-users";
+    if (this.props.selectedUsers.length > 0) {
+      buttonClass = "dmf-button";
+      placeholderText = "Search users";
+    }
     return (
       <div className="dmf-parent">
         <div className="direct-message-form">
@@ -88,9 +48,26 @@ class DirectMessageForm extends React.Component {
             </div>
           </div>
           <div className="dmf-search-parent">
-            {this.props.selectedUsers.length > 0
-              ? this.selectedUsers()
-              : this.noUsers()}
+            <div className="dmf-search">
+              {this.props.selectedUsers.map(user => {
+                return (
+                  <SelectedUserItem
+                    user={user}
+                    key={user.id}
+                    removeUserSelection={this.props.removeUserSelection}
+                  />
+                );
+              })}
+              <input
+                type="text"
+                autoFocus
+                placeholder={placeholderText}
+                onChange={this.handleInput}
+              />
+            </div>
+            <div className={buttonClass} onClick={this.handleCreateDM}>
+              Start
+            </div>
           </div>
           <div className="presentational" />
           <UsersIndexContainer search={this.state.search} />
