@@ -24,13 +24,15 @@ class Api::ChatroomsController < ApplicationController
     @chatroom = Chatroom.find_by(name: params[:chatroom][:name])
 
     if @chatroom
-      @chatroom_user = @chatroom.chatroom_users.where("user_id: = ?", current_user.id).first
-      @chatroom_user.update_attributes(status: "active")
+      chatroom_user = ChatroomUser.find_by(user_id: current_user.id, chatroom_id: @chatroom.id)
+      chatroom_user.update_attributes(status: "active")
       render :show
     else
       @chatroom = Chatroom.new(chatroom_params)
 
       if @chatroom.save
+        chatroom_user = ChatroomUser.find_by(user_id: current_user.id, chatroom_id: @chatroom.id)
+        chatroom_user.update_attributes(status: "active")
         render :show
       else
         render json: @chatroom.errors.full_messages, status: 422
