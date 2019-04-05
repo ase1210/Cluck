@@ -1,5 +1,6 @@
 import React from "react";
 import UsersIndexContainer from "../users_index/users_index_container";
+import SelectedUserItem from "./selected_user_item";
 
 class DirectMessageForm extends React.Component {
   constructor(props) {
@@ -39,17 +40,11 @@ class DirectMessageForm extends React.Component {
         <div className="dmf-search">
           {this.props.selectedUsers.map(user => {
             return (
-              <div
-                className="dmf-selected-user"
+              <SelectedUserItem
+                user={user}
                 key={user.id}
-                onClick={this.removeSelectedUser(user.id)}
-              >
-                <img src={`${user.avatarURL}`} />
-                <div>
-                  <span>{user.username}</span>
-                  <span className="x">x</span>
-                </div>
-              </div>
+                removeUserSelection={this.props.removeUserSelection}
+              />
             );
           })}
           <input
