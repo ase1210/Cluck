@@ -1,10 +1,9 @@
-export const getChatrooms = () => (
+export const getChatrooms = () =>
   $.ajax({
-    method: 'GET',
-    url: '/api/chatrooms',
-    dataType: 'json',
-  })
-);
+    method: "GET",
+    url: "/api/chatrooms",
+    dataType: "json"
+  });
 
 // export const getChatroom = (id) => (
 //   $.ajax({
@@ -14,13 +13,22 @@ export const getChatrooms = () => (
 //   })
 // );
 
-export const postChatroom = (chatroom) => (
+export const postChatroom = chatroom =>
   $.ajax({
-    method: 'POST',
+    method: "POST",
     url: `/api/chatrooms`,
-    dataType: 'json',
+    dataType: "json",
     data: {
       chatroom
     }
-  })
-);
+  });
+
+export const postDMChatroom = chatroom =>
+  $.ajax({
+    method: "POST",
+    url: `/api/dm`,
+    dataType: "json",
+    data: {
+      chatroom
+    }
+  });
