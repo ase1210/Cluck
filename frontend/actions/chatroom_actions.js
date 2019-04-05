@@ -36,7 +36,7 @@ export const createChatroom = chatroom => dispatch =>
     errors => dispatch(receiveChatroomErrors(errors))
   );
 
-export const postDMChatroom = chatroom => dispatch =>
+export const createDMChatroom = chatroom => dispatch =>
   ChatroomAPIUtil.postDMChatroom(chatroom).then(
     chatroom => dispatch(receiveChatroom(chatroom)),
     errors => dispatch(receiveChatroomErrors(errors))
