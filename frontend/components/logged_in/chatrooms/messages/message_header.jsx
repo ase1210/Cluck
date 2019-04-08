@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const MessageHeader = (props) => (
+const MessageHeader = props => (
   <>
     <header>
-      <p>#{props.activeChatroom.name}</p>
+      <p>
+        # {props.getDMName(props.activeChatroom.name, props.currentUserName)}
+      </p>
     </header>
   </>
-)
+);
 
 export default MessageHeader;
