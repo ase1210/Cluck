@@ -26,18 +26,17 @@ class Sidebar extends React.Component {
       },
       {
         connected: () => {
-          console.log(`Connected!! to ${id}`);
+          // console.log(`Connected!! to ${id}`);
         },
         disconnected: () => {
-          console.log(`Disconnected!! from ${id}`);
+          // console.log(`Disconnected!! from ${id}`);
         },
         received: data => {
-          console.log(data);
+          // console.log(data);
           if (data.added) {
             if (data.userIds.includes(parseInt(this.props.currentUser))) {
               this.createSocket(data.chatroomId);
               this.props.fetchChatroom(data.chatroomId);
-              console.log(data);
             }
           } else {
             this.props.receiveMessage(data);
@@ -120,7 +119,7 @@ class Sidebar extends React.Component {
               return (
                 <div className={`${klass}`} key={channel.id}>
                   <Link to={`/messages/${channel.id}`}>
-                    <p>#{channel.name}</p>
+                    <p># {channel.name}</p>
                   </Link>
                   {this.props.chatrooms.generalChatroomId === channel.id ? (
                     <></>
@@ -152,7 +151,13 @@ class Sidebar extends React.Component {
               return (
                 <div className={`${klass}`} key={directMessage.id}>
                   <Link to={`/messages/${directMessage.id}`}>
-                    <p># {directMessage.name}</p>
+                    <p>
+                      #{" "}
+                      {this.props.getDMName(
+                        directMessage.name,
+                        this.props.currentUserName
+                      )}
+                    </p>
                   </Link>
                   <span
                     className="leave-chatroom"
