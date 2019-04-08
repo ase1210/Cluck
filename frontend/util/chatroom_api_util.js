@@ -5,13 +5,12 @@ export const getChatrooms = () =>
     dataType: "json"
   });
 
-// export const getChatroom = (id) => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `/api/chatrooms/${id}`,
-//     dataType: 'json',
-//   })
-// );
+export const getChatroom = id =>
+  $.ajax({
+    method: "GET",
+    url: `/api/chatrooms/${id}`,
+    dataType: "json"
+  });
 
 export const postChatroom = chatroom =>
   $.ajax({
