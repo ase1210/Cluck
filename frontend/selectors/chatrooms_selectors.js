@@ -86,7 +86,6 @@ export const selectSubscribedUserChatroomIds = state => {
 };
 
 export const getDMName = (name, nameToDelete) => {
-  console.log(name, nameToDelete);
   let names = name.split(", ");
   let idx = names.indexOf(nameToDelete);
   let newNames = names.slice(0, idx).concat(names.slice(idx + 1));
