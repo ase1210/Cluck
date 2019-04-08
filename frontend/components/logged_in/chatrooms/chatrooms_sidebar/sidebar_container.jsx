@@ -4,7 +4,8 @@ import { withRouter } from "react-router-dom";
 import {
   selectChatrooms,
   selectChatroomIds,
-  selectSubscribedUserChatroomIds
+  selectSubscribedUserChatroomIds,
+  getDMName
 } from "../../../../selectors/chatrooms_selectors";
 import {
   fetchChatrooms,
@@ -21,7 +22,9 @@ const mSTP = state => {
     chatrooms,
     chatroomIds,
     userChatroomIds,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    currentUserName: state.entities.users[state.session.currentUser].username,
+    getDMName
   };
 };
 
