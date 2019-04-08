@@ -33,7 +33,15 @@ class Sidebar extends React.Component {
         },
         received: data => {
           console.log(data);
-          this.props.receiveMessage(data);
+          if (data.added) {
+            if (data.userIds.includes(parseInt(this.props.currentUser))) {
+              this.createSocket(data.chatroomId);
+              this.props.fetchChatroom(data.chatroomId);
+              console.log(data);
+            }
+          } else {
+            this.props.receiveMessage(data);
+          }
         }
       }
     );
