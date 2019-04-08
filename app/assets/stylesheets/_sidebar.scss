@@ -1,8 +1,8 @@
 .sidebar-parent {
   display: flex;
   flex-direction: column;
-  background-color: #3F0E40;
-  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #3f0e40;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 300;
   width: 220px;
   height: 100vh;
@@ -33,14 +33,13 @@
       display: flex;
       justify-content: space-between;
       font-size: 15px;
-
     }
   }
 
   .sidebar {
     display: flex;
     flex-direction: column;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-weight: 300;
     width: 220px;
     height: 100vh;
@@ -54,7 +53,6 @@
     .presentational {
       height: 18px;
     }
-
 
     .sidebar-data {
       display: flex;
@@ -71,7 +69,6 @@
       }
 
       .selected {
-
         color: #fff;
         background-color: rgb(17, 100, 163);
       }
@@ -91,11 +88,11 @@
           overflow: hidden;
 
           p {
+            white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
             width: 154px;
           }
-
         }
 
         .leave-chatroom {
@@ -105,13 +102,10 @@
         }
       }
 
-
       .presentational {
         min-height: 18px;
       }
-
     }
-
   }
 
   .app-title {
