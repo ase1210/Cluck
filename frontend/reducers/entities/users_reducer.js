@@ -1,6 +1,9 @@
 import { RECEIVE_USER, RECEIVE_USERS } from "../../actions/session_actions";
 import { merge } from "lodash";
-import { RECEIVE_CHATROOMS } from "../../actions/chatroom_actions";
+import {
+  RECEIVE_CHATROOMS,
+  RECEIVE_CHATROOM
+} from "../../actions/chatroom_actions";
 import { RECEIVE_MESSAGE } from "../../actions/message_actions";
 
 const usersReducer = (state = {}, action) => {
@@ -8,6 +11,7 @@ const usersReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CHATROOMS:
+    case RECEIVE_CHATROOM:
       return merge({}, state, action.payload.users);
     case RECEIVE_USERS:
       return action.users;
