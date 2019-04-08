@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class MessageForm extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class MessageForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   clearForm() {
-    this.setState({ body: '' });
+    this.setState({ body: "" });
   }
 
   handleInput(e) {
@@ -28,20 +28,27 @@ class MessageForm extends React.Component {
   render() {
     return (
       <>
-        <form className='message-form' onSubmit={this.handleSubmit}>
-          <input type='text'
-            placeholder={`Message #${this.props.activeChatroom.name}`}
-            onChange={this.handleInput} value={this.state.body} />
-          <button></button>
+        <form className="message-form" onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            placeholder={`Message # ${this.props.getDMName(
+              this.props.activeChatroom.name,
+              this.props.currentUserName
+            )}`}
+            onChange={this.handleInput}
+            value={this.state.body}
+          />
+          <button />
         </form>
       </>
-    )
+    );
   }
 }
 
 export default MessageForm;
 
-
-{/* <textarea autoFocus
+{
+  /* <textarea autoFocus
   placeholder={`Message #${this.props.activeChatroom.name}`}
-  onChange={this.handleInput} value={this.state.body} ></textarea> */}
+  onChange={this.handleInput} value={this.state.body} ></textarea> */
+}
