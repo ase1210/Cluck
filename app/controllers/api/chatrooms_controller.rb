@@ -4,9 +4,9 @@ class Api::ChatroomsController < ApplicationController
     @subscribed_chatrooms = current_user.chatrooms.subscribed.includes(:messages, :message_authors)
   end
 
-  # def show
-  #   @chatroom = Chatroom.find_by(id: params[:id])
-  # end
+  def show
+    @chatroom = Chatroom.find_by(id: params[:id])
+  end
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
