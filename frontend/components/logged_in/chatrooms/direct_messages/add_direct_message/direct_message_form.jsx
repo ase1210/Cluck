@@ -34,8 +34,6 @@ class DirectMessageForm extends React.Component {
       user_ids.push(user.id);
     });
     users.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
-    console.log(users);
-    console.log(user_ids);
     let name = users.join(", ");
     return { name, user_ids };
   }
