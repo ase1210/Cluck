@@ -1,13 +1,9 @@
+import { merge } from "lodash";
+import { RECEIVE_MESSAGE, REMOVE_MESSAGE } from "../../actions/message_actions";
 import {
-  merge
-} from 'lodash';
-import {
-  RECEIVE_MESSAGE,
-  REMOVE_MESSAGE
-} from '../../actions/message_actions';
-import {
-  RECEIVE_CHATROOMS
-} from '../../actions/chatroom_actions';
+  RECEIVE_CHATROOMS,
+  RECEIVE_CHATROOM
+} from "../../actions/chatroom_actions";
 
 const messagesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -15,6 +11,9 @@ const messagesReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CHATROOMS:
       return action.payload.messages;
+    case RECEIVE_CHATROOM:
+      newState = merge({}, state, action.payload.messages);
+      return newState;
     case RECEIVE_MESSAGE:
       newState = merge({}, state);
       newState[action.payload.message.id] = action.payload.message;
