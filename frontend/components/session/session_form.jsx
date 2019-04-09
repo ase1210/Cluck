@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
         window.setTimeout(() => this.demoSignInHelper(un, pw), 60);
       });
     } else {
-      this.props.action(this.state);
+      this.props.demoAction(this.state);
     }
   }
 
