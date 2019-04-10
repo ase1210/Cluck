@@ -15,7 +15,7 @@ class Api::MessagesController < ApplicationController
         chatroom_users.each do |chatroom_user|
           chatroom_user.status = "active"
           chatroom_user.save
-          userIds << chatroom_user.user_id
+          user_ids << chatroom_user.user_id
         end
         # if >= 1 chatroom_user records updated, send this broadcast to re-subscribe users to chatroom
         if chatroom_users.length > 0
