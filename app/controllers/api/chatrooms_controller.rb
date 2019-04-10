@@ -5,7 +5,8 @@ class Api::ChatroomsController < ApplicationController
   end
 
   def show
-    @chatroom = Chatroom.find_by(id: params[:id])
+    # @chatroom = Chatroom.find_by(id: params[:id])
+    @chatroom = Chatroom.all.where("id = ?", params[:id]).includes(:admin, :messages, :users, :chatroom_users)[0]
   end
 
   def create
