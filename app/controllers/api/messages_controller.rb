@@ -42,7 +42,7 @@ class Api::MessagesController < ApplicationController
                      username: current_user.username,
                      avatarURL: "https://cluckscholars.files.wordpress.com/2018/07/cropped-chick-with-cluck-color3.png?w=100",
                    })
-      # render :show
+      render :show
     else
       render json: @message.errors.full_messages, status: 422
     end
