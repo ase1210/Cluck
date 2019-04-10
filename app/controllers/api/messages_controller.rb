@@ -6,7 +6,7 @@ class Api::MessagesController < ApplicationController
 
     @chatroom = Chatroom.find_by(id: params[:message][:chatroom_id])
 
-    userIds = []
+    user_ids = []
 
     if @message.save
       # if DM - check for non-active status for chatroom users and update back to active
@@ -21,7 +21,7 @@ class Api::MessagesController < ApplicationController
         if chatroom_users.length > 0
           ActionCable.server.broadcast("room--1:messages",
                                        added: true,
-                                       userIds: userIds,
+                                       userIds: user_ids,
                                        chatroomId: @message.chatroom_id)
         end
       end
