@@ -31,7 +31,7 @@ class MessageForm extends React.Component {
         <form className="message-form" onSubmit={this.handleSubmit}>
           <input
             type="text"
-            placeholder={`Message # ${this.props.getDMName(
+            placeholder={`Message #${this.props.getDMName(
               this.props.activeChatroom.name,
               this.props.currentUserName
             )}`}
