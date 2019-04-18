@@ -10,7 +10,7 @@ const messagesReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CHATROOMS:
-      return action.payload.messages;
+      return merge({}, state, action.payload.messages);
     case RECEIVE_CHATROOM:
       newState = merge({}, state, action.payload.messages);
       return newState;
