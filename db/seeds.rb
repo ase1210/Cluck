@@ -8,10 +8,10 @@
 
 # Users Seeds
 
-Message.delete_all
-ChatroomUser.delete_all
-Chatroom.delete_all
-User.delete_all
+Message.destroy_all
+ChatroomUser.destroy_all
+Chatroom.destroy_all
+User.destroy_all
 
 # Initial Setup - create cluckbot and general chatroom
 
