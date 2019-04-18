@@ -13,17 +13,17 @@ ChatroomUser.delete_all
 Chatroom.delete_all
 User.delete_all
 
-# users = [
-#   {username: "Drew", password: "tester"},
-#   {username: "Mike", password: "tester"},
-#   {username: "Sr. Clucks'alot", password: "tester"},
-# ]
-# users.each { |user| User.create(user) }
-
 # Initial Setup - create cluckbot and general chatroom
 
 cluckbot = User.create(username: "cluckbot", password: "tester")
 general = Chatroom.create(name: "general", channel: true, admin_id: cluckbot.id)
+
+users = [
+  {username: "Drew", password: "tester"},
+  {username: "Mike", password: "tester"},
+  {username: "Sr. Clucks'alot", password: "tester"},
+]
+users.each { |user| User.create(user) }
 
 # ChatroomUser.create(user_id: cluckbot.id, chatroom_id: general.id, status: "active")
 # Message.create(body: "Welcome to Cluck! Use this channel to chat with everyone!")
@@ -49,6 +49,10 @@ joffrey = User.create(username: "Joffrey Baratheon", password: "tester")
 melisandre = User.create(username: "Melisandre", password: "tester")
 stannis = User.create(username: "Stannis Baratheon", password: "tester")
 robert = User.create(username: "Robert Baratheon", password: "tester")
+aemon = User.create(username: "Maester Aemon", password: "tester")
+mormont = User.create(username: "Lord Commander Mormont", password: "tester")
+benjen = User.create(username: "Benjen Stark", password: "tester")
+grenn = User.create(username: "Grenn", password: "tester")
 
 # Channel Creation
 
