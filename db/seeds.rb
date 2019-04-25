@@ -93,6 +93,9 @@ northwall = Chatroom.create!(name: "north-of-the-wall", channel: true, admin_id:
 User.all.each do |user|
   ChatroomUser.create!(user_id: user.id, chatroom_id: general.id, status: "active")
 end
+Message.create!(author_id: daenerys.id, chatroom_id: general.id, body: "Hey Everyone!")
+Message.create!(author_id: jon_snow.id, chatroom_id: general.id, body: "Do I really know nothing?")
+Message.create!(author_id: ygritte.id, chatroom_id: general.id, body: "You know nothing Jon Snow!")
 
 # Wall
 users = [jon_snow, alliser, sam, aemon, mormont, benjen, grenn, edd, qhorin, janos, olly, pypar, rast, chett, tyrion]
