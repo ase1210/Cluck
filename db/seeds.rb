@@ -31,29 +31,52 @@ users.each { |user| User.create!(user) }
 
 # User Creation
 
+# Nights Watch
 jon_snow = User.create!(username: "Jon Snow", password: "tester")
 alliser = User.create!(username: "Alliser Thorne", password: "tester")
 sam = User.create!(username: "Samwell Tarly", password: "tester")
-eddard = User.create!(username: "Eddard Stark", password: "tester")
-rob = User.create!(username: "Rob Stark", password: "tester")
-theon = User.create!(username: "Theon Greyjoy", password: "tester")
-arya = User.create!(username: "Arya", password: "tester")
-hodor = User.create!(username: "Hodor", password: "tester")
-ygritte = User.create!(username: "Ygritte", password: "tester")
-bran = User.create!(username: "Bran", password: "tester")
-tyrion = User.create!(username: "Tyrion", password: "tester")
-daenerys = User.create!(username: "Daenerys Targaryen", password: "tester")
-jorah = User.create!(username: "Jorah Mormont", password: "tester")
-cercei = User.create!(username: "Cersei Lannister", password: "tester")
-jaime = User.create!(username: "Jaime Lannister", password: "tester")
-joffrey = User.create!(username: "Joffrey Baratheon", password: "tester")
-melisandre = User.create!(username: "Melisandre", password: "tester")
-stannis = User.create!(username: "Stannis Baratheon", password: "tester")
-robert = User.create!(username: "Robert Baratheon", password: "tester")
 aemon = User.create!(username: "Maester Aemon", password: "tester")
 mormont = User.create!(username: "Lord Commander Mormont", password: "tester")
 benjen = User.create!(username: "Benjen Stark", password: "tester")
 grenn = User.create!(username: "Grenn", password: "tester")
+edd = User.create!(username: "Edd", password: "tester")
+qhorin = User.create!(username: "Qhorin Halfhand", password: "tester")
+janos = User.create!(username: "Janos Slynt", password: "tester")
+olly = User.create!(username: "Olly", password: "tester")
+pypar = User.create!(username: "Pypar", password: "tester")
+rast = User.create!(username: "Rast", password: "tester")
+chett = User.create!(username: "Chett", password: "tester")
+
+# Winterfell / Starks
+eddard = User.create!(username: "Eddard Stark", password: "tester")
+catelyn = User.create!(username: "Catelyn Stark", password: "tester")
+robb = User.create!(username: "Robb Stark", password: "tester")
+theon = User.create!(username: "Theon Greyjoy", password: "tester")
+sansa = User.create!(username: "Sansa", password: "tester")
+arya = User.create!(username: "Arya", password: "tester")
+hodor = User.create!(username: "Hodor", password: "tester")
+bran = User.create!(username: "Bran", password: "tester")
+rickon = User.create!(username: "Rickon", password: "tester")
+osha = User.create!(username: "Osha", password: "tester")
+maester_luwin = User.create!(username: "Maester Luwin", password: "tester")
+
+# Targaryens /  Daenerys
+daenerys = User.create!(username: "Daenerys Targaryen", password: "tester")
+rhaegar = User.create!(username: "Rhaegar Targaryen", password: "tester")
+viserys = User.create!(username: "Viserys Targaryen", password: "tester")
+tyrion = User.create!(username: "Tyrion", password: "tester")
+jorah = User.create!(username: "Jorah Mormont", password: "tester")
+
+mance = User.create!(username: "Mance Rayder", password: "tester")
+ygritte = User.create!(username: "Ygritte", password: "tester")
+
+robert = User.create!(username: "Robert Baratheon", password: "tester")
+cercei = User.create!(username: "Cersei Lannister", password: "tester")
+jaime = User.create!(username: "Jaime Lannister", password: "tester")
+joffrey = User.create!(username: "Joffrey Baratheon", password: "tester")
+
+melisandre = User.create!(username: "Melisandre", password: "tester")
+stannis = User.create!(username: "Stannis Baratheon", password: "tester")
 
 # Channel Creation
 
@@ -61,7 +84,7 @@ wall = Chatroom.create!(name: "the-wall", channel: true, admin_id: jon_snow.id)
 kings_landing = Chatroom.create!(name: "kings-landing", channel: true, admin_id: cercei.id)
 winterfell = Chatroom.create!(name: "winterfell", channel: true, admin_id: eddard.id)
 meereen = Chatroom.create!(name: "meereen", channel: true, admin_id: daenerys.id)
-north = Chatroom.create!(name: "the-north", channel: true, admin_id: rob.id)
+north = Chatroom.create!(name: "the-north", channel: true, admin_id: robb.id)
 northwall = Chatroom.create!(name: "north-of-the-wall", channel: true, admin_id: ygritte.id)
 
 # Chatroom Users Creation
@@ -84,7 +107,7 @@ users.each do |user|
 end
 
 # Winterfell
-users = [jon_snow, arya, rob, eddard, theon, hodor, bran]
+users = [jon_snow, arya, robb, eddard, theon, hodor, bran]
 users.each do |user|
   ChatroomUser.create!(user_id: user.id, chatroom_id: winterfell.id, status: "active")
 end
