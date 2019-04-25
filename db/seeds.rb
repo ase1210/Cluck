@@ -80,7 +80,7 @@ stannis = User.create!(username: "Stannis Baratheon", password: "tester")
 
 # Channel Creation
 
-wall = Chatroom.create!(name: "the-wall", channel: true, admin_id: jon_snow.id)
+wall = Chatroom.create!(name: "the-wall", channel: true, admin_id: mormont.id)
 kings_landing = Chatroom.create!(name: "kings-landing", channel: true, admin_id: cercei.id)
 winterfell = Chatroom.create!(name: "winterfell", channel: true, admin_id: eddard.id)
 meereen = Chatroom.create!(name: "meereen", channel: true, admin_id: daenerys.id)
@@ -95,10 +95,25 @@ User.all.each do |user|
 end
 
 # Wall
-users = [jon_snow, sam, alliser, tyrion]
+users = [jon_snow, alliser, sam, aemon, mormont, benjen, grenn, edd, qhorin, janos, olly, pypar, rast, chett, tyrion]
 users.each do |user|
   ChatroomUser.create!(user_id: user.id, chatroom_id: wall.id, status: "active")
 end
+
+Message.create!(author_id: mormont.id, chatroom_id: wall.id, body: "All who would pledge their service to the Night's Watch, recite these words:")
+Message.create!(author_id: mormont.id, chatroom_id: wall.id, body: "Night gathers, and now my watch begins. It shall not end until my death. I shall take no wife, hold no lands, father no children. I shall wear no crowns and win no glory. I shall live and die at my post. I am the sword in the darkness. I am the watcher on the walls. I am the shield that guards the realms of men. I pledge my life and honor to the Night's Watch, for this night and all the nights to come.")
+Message.create!(author_id: jon_snow.id, chatroom_id: wall.id, body: "Night gathers, and now my watch begins.")
+Message.create!(author_id: sam.id, chatroom_id: wall.id, body: "It shall not end until my death.")
+Message.create!(author_id: grenn.id, chatroom_id: wall.id, body: "I shall take no wife, hold no lands, father no children.")
+Message.create!(author_id: edd.id, chatroom_id: wall.id, body: "I shall wear no crowns and win no glory.")
+Message.create!(author_id: olly.id, chatroom_id: wall.id, body: "I shall live and die at my post.")
+Message.create!(author_id: pypar.id, chatroom_id: wall.id, body: "I am the sword in the darkness.")
+Message.create!(author_id: rast.id, chatroom_id: wall.id, body: "I am the watcher on the walls.")
+Message.create!(author_id: chett.id, chatroom_id: wall.id, body: "I am the shield that guards the realms of men.")
+Message.create!(author_id: jon_snow.id, chatroom_id: wall.id, body: "I pledge my life and honor to the Night's Watch, for this night and all the nights to come.")
+Message.create!(author_id: benjen.id, chatroom_id: wall.id, body: "Well said lads!")
+Message.create!(author_id: tryion.id, chatroom_id: wall.id, body: "Well done!")
+Message.create!(author_id: tryion.id, chatroom_id: wall.id, body: "The wall is not for me.  I just wanted to piss off the top of it!!")
 
 # Kings Landing
 users = [joffrey, cercei, robert, eddard, tyrion, arya, jaime]
