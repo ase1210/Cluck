@@ -17,14 +17,6 @@ User.destroy_all
 
 cluckbot = User.create!(username: "cluckbot", password: "tester")
 general = Chatroom.create!(name: "general", channel: true, admin_id: cluckbot.id)
-welcome = Message.create!(body: "Welcome to Cluck!", author_id: cluckbot.id, chatroom_id: general.id)
-
-users = [
-  {username: "Drew", password: "tester"},
-  {username: "Mike", password: "tester"},
-  {username: "Sr. Clucks'alot", password: "tester"},
-]
-users.each { |user| User.create!(user) }
 
 # ChatroomUser.create!(user_id: cluckbot.id, chatroom_id: general.id, status: "active")
 # Message.create!(body: "Welcome to Cluck! Use this channel to chat with everyone!")
@@ -94,11 +86,12 @@ northwall = Chatroom.create!(name: "north-of-the-wall", channel: true, admin_id:
 User.all.each do |user|
   ChatroomUser.create!(user_id: user.id, chatroom_id: general.id, status: "active")
 end
+Message.create!(author_id: cluckbot.id, chatroom_id: general.id, body: "Welcome to Cluck!")
 Message.create!(author_id: daenerys.id, chatroom_id: general.id, body: "Hey Everyone!")
 Message.create!(author_id: jon_snow.id, chatroom_id: general.id, body: "Do I really know nothing?")
 Message.create!(author_id: ygritte.id, chatroom_id: general.id, body: "You know nothing Jon Snow!")
 Message.create!(author_id: drew.id, chatroom_id: general.id, body: "I definitely know more than Jon Snow")
-Message.create!(author_id: tryion.id, chatroom_id: general.id, body: "I have a tender spot in my heart for cripples and bastards and broken things.")
+Message.create!(author_id: tyrion.id, chatroom_id: general.id, body: "I have a tender spot in my heart for cripples and bastards and broken things.")
 Message.create!(author_id: sam.id, chatroom_id: general.id, body: "Hello!")
 Message.create!(author_id: bran.id, chatroom_id: general.id, body: "I am the 3 eye'd raven. I'll never walk again but I will fly.")
 Message.create!(author_id: hodor.id, chatroom_id: general.id, body: "Hodor.  Hodor!")
@@ -121,8 +114,8 @@ Message.create!(author_id: rast.id, chatroom_id: wall.id, body: "I am the watche
 Message.create!(author_id: chett.id, chatroom_id: wall.id, body: "I am the shield that guards the realms of men.")
 Message.create!(author_id: jon_snow.id, chatroom_id: wall.id, body: "I pledge my life and honor to the Night's Watch, for this night and all the nights to come.")
 Message.create!(author_id: benjen.id, chatroom_id: wall.id, body: "Well said lads!")
-Message.create!(author_id: tryion.id, chatroom_id: wall.id, body: "Well done!")
-Message.create!(author_id: tryion.id, chatroom_id: wall.id, body: "The wall is not for me.  I just wanted to piss off the top of it!!")
+Message.create!(author_id: tyrion.id, chatroom_id: wall.id, body: "Well done!")
+Message.create!(author_id: tyrion.id, chatroom_id: wall.id, body: "The wall is not for me.  I just wanted to piss off the top of it!!")
 
 # Kings Landing
 users = [joffrey, cercei, robert, eddard, tyrion, arya, jaime]
