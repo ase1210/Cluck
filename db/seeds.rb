@@ -30,6 +30,7 @@ users.each { |user| User.create!(user) }
 # Message.create!(body: "Welcome to Cluck! Use this channel to chat with everyone!")
 
 # User Creation
+drew = User.create!(username: "Drew", password: "tester")
 
 # Nights Watch
 jon_snow = User.create!(username: "Jon Snow", password: "tester")
@@ -96,6 +97,11 @@ end
 Message.create!(author_id: daenerys.id, chatroom_id: general.id, body: "Hey Everyone!")
 Message.create!(author_id: jon_snow.id, chatroom_id: general.id, body: "Do I really know nothing?")
 Message.create!(author_id: ygritte.id, chatroom_id: general.id, body: "You know nothing Jon Snow!")
+Message.create!(author_id: drew.id, chatroom_id: general.id, body: "I definitely know more than Jon Snow")
+Message.create!(author_id: tryion.id, chatroom_id: general.id, body: "I have a tender spot in my heart for cripples and bastards and broken things.")
+Message.create!(author_id: sam.id, chatroom_id: general.id, body: "Hello!")
+Message.create!(author_id: bran.id, chatroom_id: general.id, body: "I am the 3 eye'd raven. I'll never walk again but I will fly.")
+Message.create!(author_id: hodor.id, chatroom_id: general.id, body: "Hodor.  Hodor!")
 
 # Wall
 users = [jon_snow, alliser, sam, aemon, mormont, benjen, grenn, edd, qhorin, janos, olly, pypar, rast, chett, tyrion]
