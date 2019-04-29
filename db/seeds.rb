@@ -74,6 +74,7 @@ stannis = User.create!(username: "Stannis Baratheon", password: "tester")
 # Channel Creation
 
 wall = Chatroom.create!(name: "the-wall", channel: true, admin_id: mormont.id)
+
 kings_landing = Chatroom.create!(name: "kings-landing", channel: true, admin_id: cercei.id)
 winterfell = Chatroom.create!(name: "winterfell", channel: true, admin_id: eddard.id)
 meereen = Chatroom.create!(name: "meereen", channel: true, admin_id: daenerys.id)
