@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
 
   handleDemoSubmit(e) {
     e.preventDefault();
-    const un = "Drew".split("");
+    const un = "Jon Snow".split("");
     const pw = "tester".split("");
     this.setState({ username: "", password: "" }, () =>
       this.demoSignInHelper(un, pw)
