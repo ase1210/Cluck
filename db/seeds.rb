@@ -118,6 +118,11 @@ Message.create!(author_id: benjen.id, chatroom_id: wall.id, body: "Well said lad
 Message.create!(author_id: tyrion.id, chatroom_id: wall.id, body: "Well done!")
 Message.create!(author_id: tyrion.id, chatroom_id: wall.id, body: "The wall is not for me.  I just wanted to piss off the top of it!!")
 
+# Jon & Sam DM
+# Jon & Daenerys DM
+# Jon & Sansa DM
+# Jon & Tyrion DM
+
 # Kings Landing
 users = [joffrey, cercei, robert, eddard, tyrion, arya, jaime]
 users.each do |user|
