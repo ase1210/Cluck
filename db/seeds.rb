@@ -132,6 +132,15 @@ end
 Message.create!(author_id: missandei.id, chatroom_id: dragonstone.id, body: "You stand in the presence of Daenerys Stormborn of House Targaryen, rightful heir to the Iron Throne, rightful Queen of the Andals and the First Men, Protector of the Seven Kingdoms, the Mother of Dragons, the Khaleesi of the Great Grass Sea, The Unburnt, The Breaker of Chains.")
 Message.create!(author_id: davos.id, chatroom_id: dragonstone.id, body: "This is Jon Snow.")
 Message.create!(author_id: davos.id, chatroom_id: dragonstone.id, body: "He's King in the North.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Thank you for traveling so far, My Lords. I hope the seas weren't too rough.")
+Message.create!(author_id: jon_snow.id, chatroom_id: dragonstone.id, body: "The winds were kind, Your Grace.")
+Message.create!(author_id: davos.id, chatroom_id: dragonstone.id, body: "Apologies. I have a Flea Bottom accent, I know. But Jon Snow is King in the North, Your Grace. He's not a lord.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Forgive me --")
+Message.create!(author_id: tyrion.id, chatroom_id: dragonstone.id, body: "Your Grace, this is Ser Davos Seaworth.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Forgive me, Ser Davos. I never did receive a formal education, but I could have sworn the last King in the North was Torren Stark who bent the knee to my ancestor Aegon Targaryen in exchange for his life and the lives of the northmen. Torren Stark swore fealty to House Targaryen in perpetuity. But do I have my facts wrong?")
+Message.create!(author_id: davos.id, chatroom_id: dragonstone.id, body: "I wasn't there, My Grace.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "No. Of course not. But still, an oath is an oath. In perpetuity means -- what does perpetuity mean, Lord Tyrion?")
+Message.create!(author_id: tyrion.id, chatroom_id: dragonstone.id, body: "Forever.")
 
 # Jon & Sam DM
 # Jon & Daenerys DM
