@@ -141,6 +141,15 @@ Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Forg
 Message.create!(author_id: davos.id, chatroom_id: dragonstone.id, body: "I wasn't there, My Grace.")
 Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "No. Of course not. But still, an oath is an oath. In perpetuity means -- what does perpetuity mean, Lord Tyrion?")
 Message.create!(author_id: tyrion.id, chatroom_id: dragonstone.id, body: "Forever.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Forever. So I assume, My Lord, that you're here to bend the knee.")
+Message.create!(author_id: jon_snow.id, chatroom_id: dragonstone.id, body: "I am not.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Oh. Well, that is unfortunate. You've travelled all this way to break faith with House Targaryen?")
+Message.create!(author_id: jon_snow.id, chatroom_id: dragonstone.id, body: "Break faith? Your father burned my grandfather alive. He burned my uncle alive. He would have burned the Seven Kingdoms.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "My father was an evil man. On behalf of House Targaryen I ask your forgiveness for the crimes he committed against your family. And I ask you not to judge a daughter by the sins of her father. Our two houses were allies for centuries. Those were the best centuries the kingdom's ever known. Centuries of peace and prosperity with the Targaryens sitting on the Iron Throne and a Stark serving as Warden of the North. I am the last Targaryen, Jon Snow. Honor the pledge your ancestor made to mine. Bend the knee and I will name you Warden of the North. Together we will save this country from those who would destroy it.")
+Message.create!(author_id: jon_snow.id, chatroom_id: dragonstone.id, body: "You're right. You're not guilty of your father's crime. And I'm not beholden to my ancestor's vows.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Then why are you here?")
+Message.create!(author_id: jon_snow.id, chatroom_id: dragonstone.id, body: "Because I need your help and you need mine.")
+Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Did you see three dragons flying overhead when you arrived?")
 
 # Jon & Sam DM
 # Jon & Daenerys DM
