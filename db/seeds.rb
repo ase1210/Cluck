@@ -59,10 +59,12 @@ rhaegar = User.create!(username: "Rhaegar Targaryen", password: "tester")
 viserys = User.create!(username: "Viserys Targaryen", password: "tester")
 tyrion = User.create!(username: "Tyrion", password: "tester")
 jorah = User.create!(username: "Jorah Mormont", password: "tester")
+missandei = User.create!(username: "Missandei", password: "tester")
 
 mance = User.create!(username: "Mance Rayder", password: "tester")
 ygritte = User.create!(username: "Ygritte", password: "tester")
 
+# Other Characters
 robert = User.create!(username: "Robert Baratheon", password: "tester")
 cercei = User.create!(username: "Cersei Lannister", password: "tester")
 jaime = User.create!(username: "Jaime Lannister", password: "tester")
@@ -70,6 +72,7 @@ joffrey = User.create!(username: "Joffrey Baratheon", password: "tester")
 
 melisandre = User.create!(username: "Melisandre", password: "tester")
 stannis = User.create!(username: "Stannis Baratheon", password: "tester")
+davos = User.create!(username: "Davos Seaworth", password: "tester")
 
 # Channel Creation
 
@@ -80,6 +83,7 @@ winterfell = Chatroom.create!(name: "winterfell", channel: true, admin_id: eddar
 meereen = Chatroom.create!(name: "meereen", channel: true, admin_id: daenerys.id)
 north = Chatroom.create!(name: "the-north", channel: true, admin_id: robb.id)
 northwall = Chatroom.create!(name: "north-of-the-wall", channel: true, admin_id: ygritte.id)
+dragonstone = Chatroom.create!(name: "dragonstone", channel: true, admin_id: daenerys.id)
 
 # Chatroom Users Creation
 
@@ -117,6 +121,17 @@ Message.create!(author_id: jon_snow.id, chatroom_id: wall.id, body: "I pledge my
 Message.create!(author_id: benjen.id, chatroom_id: wall.id, body: "Well said lads!")
 Message.create!(author_id: tyrion.id, chatroom_id: wall.id, body: "Well done!")
 Message.create!(author_id: tyrion.id, chatroom_id: wall.id, body: "The wall is not for me.  I just wanted to piss off the top of it!!")
+
+# Dragonstone
+
+users = [jon_snow, tyrion, davos, daenerys, missandei]
+users.each do |user|
+  ChatroomUser.create!(user_id: user.id, chatroom_id: dragonstone.id, status: "active")
+end
+
+Message.create!(author_id: missandei.id, chatroom_id: dragonstone.id, body: "You stand in the presence of Daenerys Stormborn of House Targaryen, rightful heir to the Iron Throne, rightful Queen of the Andals and the First Men, Protector of the Seven Kingdoms, the Mother of Dragons, the Khaleesi of the Great Grass Sea, The Unburnt, The Breaker of Chains.")
+Message.create!(author_id: davos.id, chatroom_id: dragonstone.id, body: "This is Jon Snow.")
+Message.create!(author_id: davos.id, chatroom_id: dragonstone.id, body: "He's King in the North.")
 
 # Jon & Sam DM
 # Jon & Daenerys DM
