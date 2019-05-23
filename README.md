@@ -42,6 +42,7 @@ To see Live Chat in action, create or log into a profile in one window, and then
 ### Live Chat & WebSocket Integration
 When a user logs in, Cluck will load all of their active chatrooms and create a unique websocket subscription for each chatroom. This allows users to receive updates when any other user sends a message to one of their active chatrooms. 
 
+The challenge I had to overcome was figuring out how to add a user back to a DM chatroom when another user sent them a message. I decided to subscribe all users to a Websocket room with the id of -1 on the MessagesChannel.  If a broadcast came through with a truthy value on the key 'added", I would check to see if the current user's ID was in the list of user ids provided, and would then subscribe them to the room and fetch the chatroom history. 
 ```JS
 // sidebar.jsx
 
@@ -91,8 +92,6 @@ When a user logs in, Cluck will load all of their active chatrooms and create a 
     );
   }
 ```
-
-The challenge I had to overcome was figuring out how to add a user back to a DM chatroom when another user sent them a message. I decided to subscribe all users to a Websocket room with the id of -1 on the MessagesChannel.  If a broadcast came through with a truthy value on the key 'added", I would check to see if the current user's ID was in the list of user ids provided, and would then subscribe them to the room and fetch the chatroom history. 
 
 ### Channels
 Users have the ability to join, leave and create channels.  
