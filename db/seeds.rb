@@ -173,15 +173,17 @@ Message.create!(author_id: daenerys.id, chatroom_id: dragonstone.id, body: "Is t
 # Jon & Daenerys DM
 # Jon & Sansa DM
 # Jon & Tyrion DM
+# Jon & Ygritte DM
+# Jon & Sansa & Arya & Bran
 
-# Kings Landing
-users = [joffrey, cercei, robert, eddard, tyrion, arya, jaime]
-users.each do |user|
-  ChatroomUser.create!(user_id: user.id, chatroom_id: kings_landing.id, status: "active")
-end
+# # Kings Landing
+# users = [joffrey, cercei, robert, eddard, tyrion, arya, jaime]
+# users.each do |user|
+#   ChatroomUser.create!(user_id: user.id, chatroom_id: kings_landing.id, status: "active")
+# end
 
-# Winterfell
-users = [jon_snow, arya, robb, eddard, theon, hodor, bran]
-users.each do |user|
-  ChatroomUser.create!(user_id: user.id, chatroom_id: winterfell.id, status: "active")
-end
+# # Winterfell
+# users = [jon_snow, arya, robb, eddard, theon, hodor, bran]
+# users.each do |user|
+#   ChatroomUser.create!(user_id: user.id, chatroom_id: winterfell.id, status: "active")
+# end
