@@ -102,5 +102,5 @@ Users have the ability to join, leave and create channels.
        * Simply click on the 'x' next to the channel name in the sidebar to leave the channel.
   * Creating a channel  
        * Users can create a channel by clicking on the Add Channel link.  
-       * Channel names are limited to lowercase letters, numbers and a few special characters. 
+       * Channel names are limited to lowercase letters, numbers and a few special characters.
        * Inputs are automatically adjusted to lowercase or rejected if it is not an acceptable character.
